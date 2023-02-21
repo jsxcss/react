@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Graph</title>
+    </head>
+    <body>
+      <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2-pre.1/viz.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2-pre.1/full.render.js"></script>
+      <script>const s = `digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] @fullcss/babel#build" -> "[root] ___ROOT___#build"
+		"[root] @fullcss/core#build" -> "[root] @fullcss/babel#build"
+		"[root] @fullcss/core#build" -> "[root] @fullcss/eslint#build"
+		"[root] @fullcss/core#build" -> "[root] @fullcss/rollup#build"
+		"[root] @fullcss/core#build" -> "[root] @fullcss/tsconfig#build"
+		"[root] @fullcss/docs#build" -> "[root] ___ROOT___#build"
+		"[root] @fullcss/emotion#build" -> "[root] @fullcss/babel#build"
+		"[root] @fullcss/emotion#build" -> "[root] @fullcss/core#build"
+		"[root] @fullcss/emotion#build" -> "[root] @fullcss/eslint#build"
+		"[root] @fullcss/emotion#build" -> "[root] @fullcss/rollup#build"
+		"[root] @fullcss/emotion#build" -> "[root] @fullcss/tsconfig#build"
+		"[root] @fullcss/eslint#build" -> "[root] ___ROOT___#build"
+		"[root] @fullcss/rollup#build" -> "[root] ___ROOT___#build"
+		"[root] @fullcss/styled-components#build" -> "[root] @fullcss/babel#build"
+		"[root] @fullcss/styled-components#build" -> "[root] @fullcss/core#build"
+		"[root] @fullcss/styled-components#build" -> "[root] @fullcss/eslint#build"
+		"[root] @fullcss/styled-components#build" -> "[root] @fullcss/rollup#build"
+		"[root] @fullcss/styled-components#build" -> "[root] @fullcss/tsconfig#build"
+		"[root] @fullcss/tsconfig#build" -> "[root] ___ROOT___#build"
+		"[root] @fullcss/visualization#build" -> "[root] ___ROOT___#build"
+		"[root] ___ROOT___#build" -> "[root] ___ROOT___"
+	}
+}
+`.replace(/\_\_\_ROOT\_\_\_/g, "Root").replace(/\[root\]/g, "");new Viz().renderSVGElement(s).then(el => document.body.appendChild(el)).catch(e => console.error(e));
+    </script>
+  </body>
+  </html>

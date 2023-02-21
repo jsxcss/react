@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.@fullcss/core": {
+    "message": "@fullcss/core",
+    "description": "The label for category @fullcss/core in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.@fullcss/emotion": {
+    "message": "@fullcss/emotion",
+    "description": "The label for category @fullcss/emotion in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category Introduction in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.@fullcss/styled-components": {
+    "message": "@fullcss/styled-components",
+    "description": "The label for category @fullcss/styled-components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.core": {
+    "message": "core",
+    "description": "The label for category core in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.emotion": {
+    "message": "emotion",
+    "description": "The label for category emotion in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.styled-components": {
+    "message": "styled-components",
+    "description": "The label for category styled-components in sidebar tutorialSidebar"
+  }
+}

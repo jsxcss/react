@@ -1,0 +1,51 @@
+{
+  "name": "fullcss",
+  "private": true,
+  "keywords": [
+    "fullcss",
+    "react",
+    "styled-components",
+    "emotion"
+  ],
+  "homepage": "https://docs.fullcss.org",
+  "bugs": "https://github.com/fullcss/react/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fullcss/react.git"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@7.5.2",
+  "workspaces": [
+    "configs/*",
+    "packages/*",
+    "websites/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "changeset": "changeset && changeset version",
+    "commit": "cz",
+    "dev": "turbo run dev --parallel",
+    "dev:ko": "turbo run dev:ko --scope='@fullcss/docs'",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "graph": "turbo run build --graph=graph.html",
+    "lint": "turbo run lint",
+    "lint:pack": "packlint sort -R",
+    "npm:publish": "turbo run npm:publish",
+    "postinstall": "husky install",
+    "test": "turbo run test",
+    "type:check": "turbo run type:check --parallel"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "packlint": "^0.2.4",
+    "prettier": "^2.8.2",
+    "turbo": "latest",
+    "typescript": "^4.9.4"
+  }
+}

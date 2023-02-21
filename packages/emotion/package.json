@@ -1,0 +1,72 @@
+{
+  "name": "@fullcss/emotion",
+  "version": "0.0.0",
+  "keywords": [
+    "fullcss",
+    "react"
+  ],
+  "homepage": "https://docs.fullcss.org",
+  "bugs": "https://github.com/fullcss/react/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fullcss/react.git",
+    "directory": "packages/react"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "scripts": {
+    "build": "rm -rf dist esm && tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
+    "lint": "eslint .",
+    "npm:publish": "pnpm publish",
+    "prepack": "pnpm build",
+    "test": "echo \"Error: no test specified\"",
+    "type:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fullcss/core": "*"
+  },
+  "devDependencies": {
+    "@fullcss/babel": "*",
+    "@fullcss/eslint": "*",
+    "@fullcss/rollup": "*",
+    "@fullcss/tsconfig": "*",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "eslint": "^8.33.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.5.1",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8 || ^17 || ^18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "module": "esm/index.mjs",
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    },
+    "types": "dist/index.d.ts",
+    "import": "esm/index.mjs"
+  }
+}
