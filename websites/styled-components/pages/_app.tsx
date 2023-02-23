@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Flex } from '@fullcss/styled-components'
+import { Flex } from '@jsxcss/styled-components'
 import Link from 'next/link'
 
 const MyApp = ({ Component, pageProps }: AppProps) => (

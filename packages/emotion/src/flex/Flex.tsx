@@ -1,7 +1,7 @@
 import type { ComponentPropsWithRef, ElementType } from 'react'
 import { forwardRef } from 'react'
 import { css } from '@emotion/react'
-import { FlexProps } from '@fullcss/core'
+import { FlexProps } from '@jsxcss/core'
 
 export const Flex: <C extends ElementType = 'div'>(
   flexProps: FlexProps<C> & { ref?: ComponentPropsWithRef<C>['ref'] }

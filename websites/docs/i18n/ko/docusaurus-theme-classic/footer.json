@@ -21,30 +21,30 @@
   },
   "link.item.label.Visualization": {
     "message": "Visualization",
-    "description": "The label of footer link with label=Visualization linking to https://visualization.fullcss.org/react"
+    "description": "The label of footer link with label=Visualization linking to https://visualization.jsxcss.org/react"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/fullcss/react"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/jsxcss/react"
   },
-  "link.item.label.@fullcss/emotion": {
-    "message": "@fullcss/emotion",
-    "description": "The label of footer link with label=@fullcss/emotion linking to https://www.npmjs.com/package/@fullcss/emotion"
+  "link.item.label.@jsxcss/emotion": {
+    "message": "@jsxcss/emotion",
+    "description": "The label of footer link with label=@jsxcss/emotion linking to https://www.npmjs.com/package/@jsxcss/emotion"
   },
-  "link.item.label.@fullcss/styled-components": {
-    "message": "@fullcss/styled-components",
-    "description": "The label of footer link with label=@fullcss/styled-components linking to https://www.npmjs.com/package/@fullcss/styled-components"
+  "link.item.label.@jsxcss/styled-components": {
+    "message": "@jsxcss/styled-components",
+    "description": "The label of footer link with label=@jsxcss/styled-components linking to https://www.npmjs.com/package/@jsxcss/styled-components"
   },
   "copyright": {
-    "message": "Copyright © 2023 Jonghyeon Ko and the FullCSS authors.",
+    "message": "Copyright © 2023 Jonghyeon Ko and the Jsxcss authors.",
     "description": "The footer copyright"
   },
-  "link.item.label.Example of @fullcss/emotion": {
-    "message": "Example of @fullcss/emotion",
-    "description": "The label of footer link with label=Example of @fullcss/emotion linking to https://emotion.fullcss.org"
+  "link.item.label.Example of @jsxcss/emotion": {
+    "message": "Example of @jsxcss/emotion",
+    "description": "The label of footer link with label=Example of @jsxcss/emotion linking to https://emotion.jsxcss.org"
   },
-  "link.item.label.Example of @fullcss/styled-components": {
-    "message": "Example of @fullcss/styled-components",
-    "description": "The label of footer link with label=Example of @fullcss/styled-components linking to https://styled-components.fullcss.org"
+  "link.item.label.Example of @jsxcss/styled-components": {
+    "message": "Example of @jsxcss/styled-components",
+    "description": "The label of footer link with label=Example of @jsxcss/styled-components linking to https://styled-components.jsxcss.org"
   }
 }

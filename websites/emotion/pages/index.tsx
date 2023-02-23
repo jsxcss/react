@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { Flex } from '@fullcss/emotion'
+import { Flex } from '@jsxcss/emotion'
 import { motion } from 'framer-motion'
 
 const Box = () => (

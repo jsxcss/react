@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { Flex } from '@fullcss/styled-components'
+import { Flex } from '@jsxcss/styled-components'
 import { motion } from 'framer-motion'
 
 const Box = () => (

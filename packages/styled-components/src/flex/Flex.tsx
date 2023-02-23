@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType, forwardRef } from 'react'
-import { FlexProps } from '@fullcss/core'
+import { FlexProps } from '@jsxcss/core'
 import styled, { css } from 'styled-components'
 
 const As = styled.div``

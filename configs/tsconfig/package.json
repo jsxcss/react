@@ -1,5 +1,5 @@
 {
-  "name": "@fullcss/tsconfig",
+  "name": "@jsxcss/tsconfig",
   "private": true,
   "files": [
     "base.json",

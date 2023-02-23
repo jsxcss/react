@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['@fullcss/emotion'],
+  transpilePackages: ['@jsxcss/emotion'],
   emotion: true,
 }
 

@@ -1,5 +1,5 @@
 module.exports = {
-  ...require('@fullcss/eslint/styled-components.js'),
+  ...require('@jsxcss/eslint/styled-components.js'),
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',

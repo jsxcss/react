@@ -1,5 +1,5 @@
 {
-  "name": "@fullcss/babel",
+  "name": "@jsxcss/babel",
   "private": true,
   "main": "index.js",
   "dependencies": {

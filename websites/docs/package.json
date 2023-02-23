@@ -1,5 +1,5 @@
 {
-  "name": "@fullcss/docs",
+  "name": "@jsxcss/docs",
   "private": true,
   "scripts": {
     "build": "pnpm gen:i18n && docusaurus build",

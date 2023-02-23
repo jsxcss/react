@@ -1,17 +1,17 @@
 {
-  "name": "fullcss",
+  "name": "jsxcss",
   "private": true,
   "keywords": [
-    "fullcss",
+    "jsxcss",
     "react",
     "styled-components",
     "emotion"
   ],
-  "homepage": "https://docs.fullcss.org",
-  "bugs": "https://github.com/fullcss/react/issues",
+  "homepage": "https://docs.jsxcss.org",
+  "bugs": "https://github.com/jsxcss/react/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fullcss/react.git"
+    "url": "https://github.com/jsxcss/react.git"
   },
   "license": "MIT",
   "packageManager": "pnpm@7.5.2",
@@ -25,7 +25,7 @@
     "changeset": "changeset && changeset version",
     "commit": "cz",
     "dev": "turbo run dev --parallel",
-    "dev:ko": "turbo run dev:ko --scope='@fullcss/docs'",
+    "dev:ko": "turbo run dev:ko --scope='@jsxcss/docs'",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "graph": "turbo run build --graph=graph.html",
     "lint": "turbo run lint",

@@ -1,5 +1,5 @@
 {
-  "name": "@fullcss/test-emotion",
+  "name": "@jsxcss/test-emotion",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
-    "@fullcss/emotion": "*",
+    "@jsxcss/emotion": "*",
     "axios": "^1.2.0",
     "framer-motion": "^9.0.7",
     "next": "^13.1.6",
@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@fullcss/eslint": "*",
-    "@fullcss/tsconfig": "*",
+    "@jsxcss/eslint": "*",
+    "@jsxcss/tsconfig": "*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",

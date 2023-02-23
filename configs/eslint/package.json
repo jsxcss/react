@@ -1,5 +1,5 @@
 {
-  "name": "@fullcss/eslint",
+  "name": "@jsxcss/eslint",
   "private": true,
   "license": "MIT",
   "main": "index.js",

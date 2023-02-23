@@ -1,1 +1,1 @@
-module.exports = { extends: '@fullcss/babel' }
+module.exports = { extends: '@jsxcss/babel' }

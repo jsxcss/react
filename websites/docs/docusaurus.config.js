@@ -6,9 +6,9 @@ const lightCodeTheme = require('prism-react-renderer/themes/github')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'FullCSS',
+  title: 'Jsxcss',
   tagline: '',
-  url: 'https://docs.fullcss.org',
+  url: 'https://docs.jsxcss.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,8 +16,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'fullcss', // Usually your GitHub org/user name.
-  projectName: 'FullCSS', // Usually your repo name.
+  organizationName: 'jsxcss', // Usually your GitHub org/user name.
+  projectName: 'Jsxcss', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -44,7 +44,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/fullcss/react',
+          editUrl: 'https://github.com/jsxcss/react',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -60,9 +60,9 @@ const config = {
         defaultMode: 'dark',
       },
       navbar: {
-        title: 'FullCSS',
+        title: 'Jsxcss',
         logo: {
-          alt: 'FullCSS Logo',
+          alt: 'Jsxcss Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -73,7 +73,7 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/fullcss/react',
+            href: 'https://github.com/jsxcss/react',
             label: 'GitHub',
             position: 'right',
           },
@@ -98,12 +98,12 @@ const config = {
                 to: '/docs/intro/installation.i18n',
               },
               {
-                label: 'Example of @fullcss/emotion',
-                href: 'https://emotion.fullcss.org',
+                label: 'Example of @jsxcss/emotion',
+                href: 'https://emotion.jsxcss.org',
               },
               {
-                label: 'Example of @fullcss/styled-components',
-                href: 'https://styled-components.fullcss.org',
+                label: 'Example of @jsxcss/styled-components',
+                href: 'https://styled-components.jsxcss.org',
               },
             ],
           },
@@ -112,7 +112,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/fullcss/react',
+                href: 'https://github.com/jsxcss/react',
               },
             ],
           },
@@ -120,17 +120,17 @@ const config = {
             title: 'Libraries',
             items: [
               {
-                label: '@fullcss/emotion',
-                href: 'https://www.npmjs.com/package/@fullcss/emotion',
+                label: '@jsxcss/emotion',
+                href: 'https://www.npmjs.com/package/@jsxcss/emotion',
               },
               {
-                label: '@fullcss/styled-components',
-                href: 'https://www.npmjs.com/package/@fullcss/styled-components',
+                label: '@jsxcss/styled-components',
+                href: 'https://www.npmjs.com/package/@jsxcss/styled-components',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Jonghyeon Ko and the FullCSS authors.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Jonghyeon Ko and the Jsxcss authors.`,
       },
       prism: {
         theme: lightCodeTheme,

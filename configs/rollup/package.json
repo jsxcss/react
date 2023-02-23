@@ -1,5 +1,5 @@
 {
-  "name": "@fullcss/rollup",
+  "name": "@jsxcss/rollup",
   "private": true,
   "main": "index.js",
   "dependencies": {

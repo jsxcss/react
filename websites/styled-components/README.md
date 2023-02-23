@@ -1,1 +1,1 @@
-# @fullcss/websites/styled-components
+# @jsxcss/websites/styled-components

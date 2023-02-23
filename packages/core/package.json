@@ -1,16 +1,16 @@
 {
-  "name": "@fullcss/core",
+  "name": "@jsxcss/core",
   "version": "0.0.1",
   "private": true,
   "keywords": [
-    "fullcss",
+    "jsxcss",
     "react"
   ],
-  "homepage": "https://docs.fullcss.org",
-  "bugs": "https://github.com/fullcss/react/issues",
+  "homepage": "https://docs.jsxcss.org",
+  "bugs": "https://github.com/jsxcss/react/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fullcss/react.git",
+    "url": "https://github.com/jsxcss/react.git",
     "directory": "packages/react"
   },
   "license": "MIT",
@@ -35,10 +35,10 @@
     "type:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@fullcss/babel": "*",
-    "@fullcss/eslint": "*",
-    "@fullcss/rollup": "*",
-    "@fullcss/tsconfig": "*",
+    "@jsxcss/babel": "*",
+    "@jsxcss/eslint": "*",
+    "@jsxcss/rollup": "*",
+    "@jsxcss/tsconfig": "*",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",

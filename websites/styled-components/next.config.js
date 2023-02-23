@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['@fullcss/styled-components'],
+  transpilePackages: ['@jsxcss/styled-components'],
   compiler: {
     styledComponents: {
       displayName: true,
