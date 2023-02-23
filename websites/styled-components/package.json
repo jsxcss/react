@@ -1,0 +1,30 @@
+{
+  "name": "@fullcss/test-styled-components",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --port 3002",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fullcss/styled-components": "*",
+    "axios": "^1.2.0",
+    "framer-motion": "^9.0.7",
+    "next": "^13.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@fullcss/eslint": "*",
+    "@fullcss/tsconfig": "*",
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@types/styled-components": "^5.1.26",
+    "eslint": "7.32.0",
+    "eslint-config-next": "^13.1.2",
+    "typescript": "4.8.3"
+  }
+}
