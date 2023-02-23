@@ -1,1 +1,1 @@
-# @fullcss/visualization
+# @fullcss/websites/styled-components

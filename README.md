@@ -1,8 +1,6 @@
-<div align="center">
-  <a href="https://docs.fullcss.org" title="">
-    <img src="https://raw.githubusercontent.com/fullcss/react/main/websites/docs/static/banner.png" alt="" />
-  </a>
-</div>
+# FullCSS
+
+Layout components for emotion/styled-components easily
 
 <br/>
 
@@ -16,7 +14,13 @@
 
 <div align="center">
 
+### Links
+
 [OFFICIAL DOCS](https://docs.fullcss.org) | [DEPENDENCY GRAPH](https://fullcss.github.io/react/graph) | [CONTRIBUTING](https://github.com/fullcss/react/pulls) | [LICENSE](./LICENSE)
+
+### Examples
+
+[@fullcss/emotion](emotion.fullcss.org), [@fullcss/styled-components](styled-components.fullcss.org)
 
 </div>
 

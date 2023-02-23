@@ -38,5 +38,13 @@
   "copyright": {
     "message": "Copyright © 2023 Jonghyeon Ko and the FullCSS authors.",
     "description": "The footer copyright"
+  },
+  "link.item.label.Example of @fullcss/emotion": {
+    "message": "Example of @fullcss/emotion",
+    "description": "The label of footer link with label=Example of @fullcss/emotion linking to https://emotion.fullcss.org"
+  },
+  "link.item.label.Example of @fullcss/styled-components": {
+    "message": "Example of @fullcss/styled-components",
+    "description": "The label of footer link with label=Example of @fullcss/styled-components linking to https://styled-components.fullcss.org"
   }
 }

@@ -98,8 +98,12 @@ const config = {
                 to: '/docs/intro/installation.i18n',
               },
               {
-                label: 'Visualization',
-                href: 'https://visualization.fullcss.org/react',
+                label: 'Example of @fullcss/emotion',
+                href: 'https://emotion.fullcss.org',
+              },
+              {
+                label: 'Example of @fullcss/styled-components',
+                href: 'https://styled-components.fullcss.org',
               },
             ],
           },
