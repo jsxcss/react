@@ -11,6 +11,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'prefer-arrow-callback': ['off'],
     'react/function-component-definition': ['error', { namedComponents: 'arrow-function' }],
     'react/jsx-props-no-spreading': ['off'],
     'react/destructuring-assignment': ['off'],

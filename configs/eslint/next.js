@@ -12,6 +12,9 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'react/react-in-jsx-scope': ['off'],
+    'react/require-default-props': ['off'],
+    'react/no-unknown-property': ['off'],
     'react/function-component-definition': ['error', { namedComponents: 'arrow-function' }],
     'react/jsx-props-no-spreading': ['off'],
     'react/destructuring-assignment': ['off'],
