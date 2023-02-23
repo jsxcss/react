@@ -1,6 +1,6 @@
 {
   "name": "@fullcss/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "keywords": [
     "fullcss",
@@ -30,7 +30,6 @@
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "lint": "eslint .",
-    "npm:publish": "pnpm publish",
     "prepack": "pnpm build",
     "test": "echo \"Error: no test specified\"",
     "type:check": "tsc --noEmit"
