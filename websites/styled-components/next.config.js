@@ -2,7 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['@fullcss/styled-components'],
-  styledComponents: true,
+  compiler: {
+    styledComponents: {
+      displayName: true,
+      ssr: true,
+      cssProp: true,
+    },
+  },
 }
 
 module.exports = nextConfig

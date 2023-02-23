@@ -1,7 +1,6 @@
 import { css } from '@emotion/react'
 import { Flex } from '@fullcss/emotion'
 import { motion } from 'framer-motion'
-import { useRef } from 'react'
 
 const Box = () => (
   <motion.div
@@ -13,25 +12,12 @@ const Box = () => (
   />
 )
 
-const Emotion = () => {
-  const ref = useRef<HTMLDivElement>(null)
+const StyledComponents = () => (
+  <Flex as={motion.a} justify="center" align="center">
+    <Box />
+    <Box />
+    <Box />
+  </Flex>
+)
 
-  return (
-    <div>
-      <div
-        css={css`
-          background-color: red;
-          width: 200px;
-          height: 200px;
-        `}
-      />
-      <Flex ref={ref}>
-        <Box />
-        <Box />
-        <Box />
-      </Flex>
-    </div>
-  )
-}
-
-export default Emotion
+export default StyledComponents

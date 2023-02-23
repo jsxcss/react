@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@fullcss/babel": "*",
+    "@fullcss/core": "*",
     "@fullcss/eslint": "*",
     "@fullcss/rollup": "*",
     "@fullcss/tsconfig": "*",
