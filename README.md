@@ -1,4 +1,4 @@
-# FullCSS
+# FullCSS Packages
 
 Layout components for emotion/styled-components easily
 
@@ -23,6 +23,29 @@ Layout components for emotion/styled-components easily
 [@fullcss/emotion](emotion.fullcss.org), [@fullcss/styled-components](styled-components.fullcss.org)
 
 </div>
+
+## [@fullcss/core](https://docs.fullcss.org/docs/core/README.i18n)
+
+All common interfaces of fullcss packages
+
+- Box (Planned)
+- Flex
+- Stack (Planned)
+- Container (Planned)
+- Grid (Planned)
+- Center (Planned)
+
+## [@fullcss/emotion](https://docs.fullcss.org/docs/emotion/README.i18n)
+
+[![npm version](https://img.shields.io/npm/v/@fullcss/emotion?color=61DAFB)](https://www.npmjs.com/package/@fullcss/emotion) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@fullcss/emotion?color=blue) ![npm](https://img.shields.io/npm/dm/@fullcss/emotion?color=blue)
+
+Implementation package of @fullcss/core for [emotion](https://emotion.sh)
+
+## [@fullcss/styled-components](https://docs.fullcss.org/docs/styled-components/README.i18n)
+
+[![npm version](https://img.shields.io/npm/v/@fullcss/styled-components?color=61DAFB)](https://www.npmjs.com/package/@fullcss/styled-components) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@fullcss/styled-components?color=blue) ![npm](https://img.shields.io/npm/dm/@fullcss/styled-components?color=blue)
+
+Implementation package of @fullcss/core for [styled-components](https://styled-components.com)
 
 # License
 
