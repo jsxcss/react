@@ -1,1 +1,1 @@
-export const hi = 'hi'
+export type { FlexOptions, FlexProps } from './flex'

@@ -13,7 +13,7 @@ const Box = () => (
 )
 
 const StyledComponents = () => (
-  <Flex as={motion.a}>
+  <Flex as={motion.a} justify="center" align="center">
     <Box />
     <Box />
     <Box />
