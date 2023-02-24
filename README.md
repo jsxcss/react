@@ -16,17 +16,13 @@
 
 <div align="center">
 
-### Links
-
 [OFFICIAL DOCS](https://docs.jsxcss.org) | [DEPENDENCY GRAPH](https://jsxcss.github.io/react/graph) | [CONTRIBUTING](https://github.com/jsxcss/react/pulls) | [LICENSE](./LICENSE)
 
-### Examples
-
-[@jsxcss/emotion](emotion.jsxcss.org), [@jsxcss/styled-components](styled-components.jsxcss.org)
+[@jsxcss/emotion](emotion.jsxcss.org) | [@jsxcss/styled-components](styled-components.jsxcss.org)
 
 </div>
 
-## [@jsxcss/core](https://docs.jsxcss.org/docs/core/README.i18n)
+# [@jsxcss/core](https://docs.jsxcss.org/docs/core/README.i18n)
 
 All common interfaces of jsxcss packages
 
@@ -37,13 +33,13 @@ All common interfaces of jsxcss packages
 - Grid (Planned)
 - Center (Planned)
 
-## [@jsxcss/emotion](https://docs.jsxcss.org/docs/emotion/README.i18n)
+# [@jsxcss/emotion](https://docs.jsxcss.org/docs/emotion/README.i18n)
 
 [![npm version](https://img.shields.io/npm/v/@jsxcss/emotion?color=61DAFB)](https://www.npmjs.com/package/@jsxcss/emotion) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@jsxcss/emotion?color=blue) ![npm](https://img.shields.io/npm/dm/@jsxcss/emotion?color=blue)
 
 Implementation package of @jsxcss/core for [emotion](https://emotion.sh)
 
-## [@jsxcss/styled-components](https://docs.jsxcss.org/docs/styled-components/README.i18n)
+# [@jsxcss/styled-components](https://docs.jsxcss.org/docs/styled-components/README.i18n)
 
 [![npm version](https://img.shields.io/npm/v/@jsxcss/styled-components?color=61DAFB)](https://www.npmjs.com/package/@jsxcss/styled-components) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@jsxcss/styled-components?color=blue) ![npm](https://img.shields.io/npm/dm/@jsxcss/styled-components?color=blue)
 
@@ -56,7 +52,7 @@ MIT © Jsxcss. See [LICENSE](./LICENSE) for details.
 <div align="center">
   <a title="Jsxcss" href="https://github.com/jsxcss">
     <div style='display:flex; align-items:center;'>
-      <img alt="Jsxcss" src="https://github.com/jsxcss.png" width="24">
+      <img alt="Jsxcss" src="https://raw.githubusercontent.com/jsxcss/react/main/websites/docs/static/img/logo_notcropped.png" width="24">
       <sup>Jsxcss</sup>
     </div>
   </a>
