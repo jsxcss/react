@@ -36,7 +36,7 @@
     "description": "The label of footer link with label=@jsxcss/styled-components linking to https://www.npmjs.com/package/@jsxcss/styled-components"
   },
   "copyright": {
-    "message": "Copyright © 2023 Jonghyeon Ko and the Jsxcss authors.",
+    "message": "Copyright © 2023 Jonghyeon Ko and the JSXCSS authors.",
     "description": "The footer copyright"
   },
   "link.item.label.Example of @jsxcss/emotion": {

@@ -7,7 +7,7 @@
     "styled-components",
     "emotion"
   ],
-  "homepage": "https://docs.jsxcss.org",
+  "homepage": "https://jsxcss.org",
   "bugs": "https://github.com/jsxcss/react/issues",
   "repository": {
     "type": "git",

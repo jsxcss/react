@@ -6,9 +6,9 @@ const lightCodeTheme = require('prism-react-renderer/themes/github')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Jsxcss',
+  title: 'JSXCSS',
   tagline: '',
-  url: 'https://docs.jsxcss.org',
+  url: 'https://jsxcss.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'jsxcss', // Usually your GitHub org/user name.
-  projectName: 'Jsxcss', // Usually your repo name.
+  projectName: 'JSXCSS', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -60,9 +60,9 @@ const config = {
         defaultMode: 'dark',
       },
       navbar: {
-        title: 'Jsxcss',
+        title: 'JSXCSS',
         logo: {
-          alt: 'Jsxcss Logo',
+          alt: 'JSXCSS Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -130,7 +130,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Jonghyeon Ko and the Jsxcss authors.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Jonghyeon Ko and the JSXCSS authors.`,
       },
       prism: {
         theme: lightCodeTheme,
