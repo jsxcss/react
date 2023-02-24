@@ -1,1 +1,1 @@
-export type { FlexOptions, FlexProps } from './Flex'
+export type { FlexProps, JsxCssFlex } from './Flex'

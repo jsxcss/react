@@ -1,11 +1,9 @@
 import { ComponentPropsWithRef, ElementType, forwardRef } from 'react'
-import { FlexProps } from '@jsxcss/core'
+import { FlexProps, JsxCssFlex } from '@jsxcss/core'
 import styled, { css } from 'styled-components'
 
 const As = styled.div``
-export const Flex: <C extends ElementType = 'div'>(
-  flexProps: FlexProps<C> & { ref?: ComponentPropsWithRef<C>['ref'] }
-) => JSX.Element | null = forwardRef(function Flex<T extends ElementType>(
+export const Flex: JsxCssFlex = forwardRef(function Flex<T extends ElementType>(
   { as, align = 'stretch', direction = 'row', justify = 'flex-start', ...rest }: FlexProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {

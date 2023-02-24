@@ -1,12 +1,14 @@
-import { CSSProperties, ComponentPropsWithoutRef, ElementType } from 'react'
+import { CSSProperties, ComponentPropsWithRef, ElementType } from 'react'
+import { AsComponentPropsWithoutRef } from '../common'
 
-export interface FlexOptions {
+export type JsxCssFlex = <C extends ElementType = 'div'>(
+  props: FlexProps<C> & { ref?: ComponentPropsWithRef<C>['ref'] }
+) => JSX.Element | null
+
+interface FlexOptions {
   align?: CSSProperties['alignItems']
   justify?: CSSProperties['justifyContent']
   direction?: CSSProperties['flexDirection']
 }
 
-export type FlexProps<C extends ElementType> = {
-  as?: C
-} & ComponentPropsWithoutRef<C> &
-  FlexOptions
+export type FlexProps<C extends ElementType = 'div'> = AsComponentPropsWithoutRef<C> & FlexOptions
