@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { Flex } from '@jsxcss/emotion'
+import { Flex, Stack } from '@jsxcss/emotion'
 import { motion } from 'framer-motion'
 
 const Box = () => (
@@ -12,12 +12,22 @@ const Box = () => (
   />
 )
 
-const StyledComponents = () => (
-  <Flex as={motion.a} justify="center" align="center">
+const Emotion = () => (
+  <Flex as="a" justify="center" align="center">
     <Box />
     <Box />
     <Box />
+    <Stack.Vertical spacing={4}>
+      <Box />
+      <Box />
+      <Box />
+    </Stack.Vertical>
+    <Stack.Horizontal>
+      <Box />
+      <Box />
+      <Box />
+    </Stack.Horizontal>
   </Flex>
 )
 
-export default StyledComponents
+export default Emotion

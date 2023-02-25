@@ -1,1 +1,2 @@
-export { Flex } from './flex'
+export { Flex, Stack } from './components'
+export { flex, gutter } from './utils'

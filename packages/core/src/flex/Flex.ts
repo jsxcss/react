@@ -5,7 +5,7 @@ export type JsxCssFlex = <C extends ElementType = 'div'>(
   props: FlexProps<C> & { ref?: ComponentPropsWithRef<C>['ref'] }
 ) => JSX.Element | null
 
-interface FlexOptions {
+export type FlexOptions = {
   align?: CSSProperties['alignItems']
   justify?: CSSProperties['justifyContent']
   direction?: CSSProperties['flexDirection']

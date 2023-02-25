@@ -1,23 +1,13 @@
 import type { ComponentPropsWithRef, ElementType } from 'react'
 import { forwardRef } from 'react'
-import { css } from '@emotion/react'
 import { FlexProps, JsxCssFlex } from '@jsxcss/core'
+import styled from 'styled-components'
+import { flex } from '../../utils'
 
+const As = styled.div``
 export const Flex: JsxCssFlex = forwardRef(function Flex<T extends ElementType>(
   { as, align = 'stretch', direction = 'row', justify = 'flex-start', ...rest }: FlexProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {
-  const As = as || 'div'
-  return (
-    <As
-      ref={ref}
-      css={css`
-        display: flex;
-        flex-direction: ${direction};
-        align-items: ${align};
-        justify-content: ${justify};
-      `}
-      {...rest}
-    />
-  )
+  return <As as={as || 'div'} ref={ref} css={flex({ direction, align, justify })} {...rest} />
 })
