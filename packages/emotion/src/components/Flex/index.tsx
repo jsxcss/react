@@ -1,9 +1,9 @@
 import type { ComponentPropsWithRef, ElementType } from 'react'
 import { forwardRef } from 'react'
-import { FlexProps, JsxCssFlex } from '@jsxcss/core'
+import { FlexProps, JSXCSSFlex } from '@jsxcss/core'
 import { flex } from '../../utils'
 
-export const Flex: JsxCssFlex = forwardRef(function Flex<T extends ElementType>(
+export const Flex: JSXCSSFlex = forwardRef(function Flex<T extends ElementType>(
   { as, direction = 'row', justify = 'flex-start', align = 'stretch', ...rest }: FlexProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {

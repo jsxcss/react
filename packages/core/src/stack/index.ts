@@ -1,1 +1,1 @@
-export type { StackProps, JsxCssStack } from './Stack'
+export type { StackProps, JSXCSSStack } from './Stack'
