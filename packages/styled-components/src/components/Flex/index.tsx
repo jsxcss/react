@@ -1,5 +1,4 @@
-import type { ComponentPropsWithRef, ElementType } from 'react'
-import { forwardRef } from 'react'
+import { ComponentPropsWithRef, ElementType, forwardRef } from 'react'
 import { FlexProps, JSXCSSFlex } from '@jsxcss/core'
 import styled from 'styled-components'
 import { flex } from '../../utils'

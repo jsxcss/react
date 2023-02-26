@@ -1,5 +1,4 @@
-import type { ComponentPropsWithRef, ElementType } from 'react'
-import { forwardRef } from 'react'
+import { ComponentPropsWithRef, ElementType, forwardRef } from 'react'
 import { JSXCSSStack, StackProps } from '@jsxcss/core'
 import styled, { css } from 'styled-components'
 import { flex, gutter } from '../../utils'
