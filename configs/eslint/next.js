@@ -21,7 +21,8 @@ module.exports = {
     'react/state-in-constructor': ['off'],
     'import/prefer-default-export': ['off'],
     '@typescript-eslint/no-shadow': ['off'],
-    '@next/next/no-html-link-for-pages': 'off',
+    '@next/next/no-html-link-for-pages': ['off'],
+    'arrow-body-style': ['off'],
   },
   ignorePatterns: ['**/*.js', '**/*.json', 'node_modules', 'public', 'styles', '.next', 'coverage', 'dist', '.turbo'],
 }
