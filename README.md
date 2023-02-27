@@ -26,7 +26,7 @@
 
 All common interfaces of jsxcss packages
 
-- Box (Planned)
+- Box
 - Flex
 - Stack
 - Container (Planned)

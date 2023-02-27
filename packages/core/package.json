@@ -1,6 +1,6 @@
 {
   "name": "@jsxcss/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": [
     "jsxcss",
     "react"
@@ -29,6 +29,7 @@
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
     "lint": "eslint .",
+    "npm:publish": "pnpm publish",
     "prepack": "pnpm build",
     "test": "echo \"Error: no test specified\"",
     "type:check": "tsc --noEmit"
