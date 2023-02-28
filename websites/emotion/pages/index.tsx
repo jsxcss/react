@@ -5,9 +5,10 @@ import { motion } from 'framer-motion'
 const Box = () => (
   <motion.div
     css={css`
-      background-color: red;
-      width: 200px;
-      height: 200px;
+      background-color: white;
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
     `}
   />
 )
@@ -17,7 +18,7 @@ const Emotion = () => (
     <Box />
     <Box />
     <Box />
-    <Stack.Vertical spacing={4}>
+    <Stack.Vertical>
       <Box />
       <Box />
       <Box />

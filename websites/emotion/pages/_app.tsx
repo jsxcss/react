@@ -1,13 +1,20 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Flex } from '@jsxcss/emotion'
+import { Stack } from '@jsxcss/emotion'
 import Link from 'next/link'
 
+const href = process.env.NODE_ENV === 'development' ? 'http://localhost:3002' : 'https://emotion.jsxcss.org'
+
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Flex direction="column" justify="space-between">
-    <Link href="/">emotion home</Link>
+  <Stack.Vertical>
+    <Stack.Horizontal align="center">
+      <Link href="/">
+        <h1>@jsxcss/emotion</h1>
+      </Link>
+      <Link href={href}>Go to @jsxcss/styled-components</Link>
+    </Stack.Horizontal>
     <Component pageProps={pageProps} />
-  </Flex>
+  </Stack.Vertical>
 )
 
 export default MyApp
