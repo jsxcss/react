@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import type { ComponentPropsWithRef, ElementType } from 'react'
 import { forwardRef } from 'react'
 import { css } from '@emotion/react'

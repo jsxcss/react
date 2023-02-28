@@ -38,6 +38,7 @@
     "@jsxcss/core": "*"
   },
   "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/react": "^11.10.6",
     "@jsxcss/babel": "*",
     "@jsxcss/core": "*",

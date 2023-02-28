@@ -1,1 +1,4 @@
-module.exports = { extends: '@jsxcss/babel' }
+module.exports = {
+  extends: '@jsxcss/babel',
+  presets: ['@emotion/babel-preset-css-prop'],
+}
