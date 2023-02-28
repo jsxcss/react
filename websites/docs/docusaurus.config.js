@@ -72,9 +72,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      colorMode: {
-        defaultMode: 'dark',
-      },
+      colorMode: {},
       navbar: {
         title: 'JSXCSS',
         logo: {
