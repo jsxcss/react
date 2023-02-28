@@ -1,6 +1,13 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const package = {
+  intro: 'websites/docs/',
+  core: 'packages/',
+  emotion: 'packages/',
+  'styled-components': 'packages/',
+}
+
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 
@@ -44,7 +51,16 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/jsxcss/react',
+          editUrl: (editUrlParams) => {
+            const defaultUrl = 'https://github.com/jsxcss/react/'
+            const packageKey = editUrlParams.docPath.split('/')[0]
+            const scope = package[packageKey]
+            const restPath = editUrlParams.docPath.replace('.i18n.', `.${editUrlParams.locale}.`)
+            const editUrl = scope
+              ? `${defaultUrl}blob/main/${scope}${restPath}`.replace('/README.en.md', '/README.md')
+              : defaultUrl
+            return editUrl
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
