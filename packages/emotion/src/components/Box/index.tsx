@@ -3,9 +3,10 @@ import { forwardRef } from 'react'
 import { BoxProps, JSXCSSBox } from '@jsxcss/core'
 
 export const Box: JSXCSSBox = forwardRef(function Flex<T extends ElementType>(
-  { as, ...rest }: BoxProps<T>,
+  props: BoxProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {
-  const As = as || 'div'
+  const { as = 'div', ...rest } = props
+  const As = as
   return <As ref={ref} {...rest} />
 })

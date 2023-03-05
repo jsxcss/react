@@ -5,10 +5,11 @@ import { JSXCSSStack, StackProps } from '@jsxcss/core'
 import { flex, gutter } from '../../utils'
 
 export const BaseStack: JSXCSSStack = forwardRef(function Stack<T extends ElementType>(
-  { as, direction = 'vertical', spacing = 24, selector, align, justify, ...rest }: StackProps<T>,
+  props: StackProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {
-  const As = as || 'div'
+  const { as = 'div', direction = 'vertical', spacing = 24, selector, align, justify, ...rest } = props
+  const As = as
   return (
     <As
       ref={ref}
@@ -22,10 +23,11 @@ export const BaseStack: JSXCSSStack = forwardRef(function Stack<T extends Elemen
 })
 
 export const StackVertical: JSXCSSStack = forwardRef(function Stack<T extends ElementType>(
-  { as, direction, spacing = 24, selector, align, justify, ...rest }: StackProps<T>,
+  props: StackProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {
-  const As = as || 'div'
+  const { as = 'div', direction, spacing = 24, selector, align, justify, ...rest } = props
+  const As = as
   return (
     <As
       ref={ref}
@@ -38,10 +40,11 @@ export const StackVertical: JSXCSSStack = forwardRef(function Stack<T extends El
   )
 })
 export const StackHorizontal: JSXCSSStack = forwardRef(function Stack<T extends ElementType>(
-  { as, direction, spacing = 24, selector, align, justify, ...rest }: StackProps<T>,
+  props: StackProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {
-  const As = as || 'div'
+  const { as = 'div', direction, spacing = 24, selector, align, justify, ...rest } = props
+  const As = as
   return (
     <As
       ref={ref}

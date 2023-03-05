@@ -1,8 +1,8 @@
 import { CSSProperties, ComponentPropsWithRef, ElementType } from 'react'
 import { AsComponentPropsWithoutRef } from '../common'
 
-export type JSXCSSFlex = <C extends ElementType = 'div'>(
-  props: FlexProps<C> & { ref?: ComponentPropsWithRef<C>['ref'] }
+export type JSXCSSFlex = <C extends ElementType = ElementType>(
+  props: FlexProps<C> & Pick<ComponentPropsWithRef<C>, 'ref'>
 ) => JSX.Element | null
 
 export type FlexOptions = {
@@ -11,4 +11,4 @@ export type FlexOptions = {
   direction?: CSSProperties['flexDirection']
 }
 
-export type FlexProps<C extends ElementType = 'div'> = AsComponentPropsWithoutRef<C> & FlexOptions
+export type FlexProps<C extends ElementType = ElementType> = AsComponentPropsWithoutRef<C> & FlexOptions

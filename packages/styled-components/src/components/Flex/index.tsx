@@ -5,8 +5,9 @@ import { flex } from '../../utils'
 
 const As = styled.div``
 export const Flex: JSXCSSFlex = forwardRef(function Flex<T extends ElementType>(
-  { as, align = 'stretch', direction = 'row', justify = 'flex-start', ...rest }: FlexProps<T>,
+  props: FlexProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {
-  return <As as={as || 'div'} ref={ref} css={flex({ direction, align, justify })} {...rest} />
+  const { as = 'div', align = 'stretch', direction = 'row', justify = 'flex-start', ...rest } = props
+  return <As as={as} ref={ref} css={flex({ direction, align, justify })} {...rest} />
 })

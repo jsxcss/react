@@ -5,8 +5,9 @@ import styled from 'styled-components'
 
 const As = styled.div``
 export const Box: JSXCSSBox = forwardRef(function Flex<T extends ElementType>(
-  { as, ...rest }: BoxProps<T>,
+  props: BoxProps<T>,
   ref: ComponentPropsWithRef<T>['ref']
 ) {
-  return <As as={as || 'div'} ref={ref} {...rest} />
+  const { as = 'div', ...rest } = props
+  return <As as={as} ref={ref} {...rest} />
 })
