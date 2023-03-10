@@ -1,12 +1,15 @@
 import type { ComponentPropsWithRef, ElementType } from 'react'
 import { forwardRef } from 'react'
-import { BoxProps, JSXCSSBox } from '@jsxcss/core'
+import { BoxComponentType, BoxProps } from '@jsxcss/core'
 
-export const Box: JSXCSSBox = forwardRef(function Flex<T extends ElementType>(
-  props: BoxProps<T>,
-  ref: ComponentPropsWithRef<T>['ref']
-) {
-  const { as = 'div', ...rest } = props
-  const As = as
-  return <As ref={ref} {...rest} />
-})
+const createBoxComponent = (): BoxComponentType =>
+  forwardRef(function Box<T extends ElementType>(props: BoxProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
+    const { as = 'div', ...rest } = props
+    const Component = as
+    return <Component ref={ref} {...rest} />
+  })
+
+type BoxType = BoxComponentType
+
+export type { BoxProps }
+export const Box = createBoxComponent() as BoxType

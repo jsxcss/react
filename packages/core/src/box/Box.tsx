@@ -1,8 +1,8 @@
 import { ComponentPropsWithRef, ElementType } from 'react'
-import { AsComponentPropsWithoutRef } from '../common'
+import { AsProps } from '../common'
 
-export type JSXCSSBox = <C extends ElementType = ElementType>(
-  props: BoxProps<C> & { ref?: ComponentPropsWithRef<C>['ref'] }
+export type BoxProps<T extends ElementType = 'div'> = AsProps<T>
+
+export type BoxComponentType = <T extends ElementType = 'div'>(
+  props: BoxProps<T> & Partial<Pick<ComponentPropsWithRef<T>, 'ref'>>
 ) => JSX.Element | null
-
-export type BoxProps<C extends ElementType = ElementType> = AsComponentPropsWithoutRef<C>

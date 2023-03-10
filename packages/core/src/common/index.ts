@@ -1,10 +1,7 @@
-import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, ElementType } from 'react'
 
-export type AsComponentPropsWithoutRef<C extends ElementType> = {
+export type AsProps<C extends ElementType> = ComponentPropsWithoutRef<C> & {
   as?: C
-  children?: ReactNode
-} & ComponentPropsWithoutRef<C>
+}
 
 export type AxisDirection = 'vertical' | 'horizontal'
-
-export type RefOfComponent<C extends ElementType> = { ref?: ComponentPropsWithRef<C>['ref'] }

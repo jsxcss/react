@@ -14,7 +14,7 @@ const Box = () => (
 )
 
 const StyledComponents = () => (
-  <Flex as="a" justify="center" align="center">
+  <Flex.Center>
     <Box />
     <Box />
     <Box />
@@ -28,7 +28,7 @@ const StyledComponents = () => (
       <Box />
       <Box />
     </Stack.Horizontal>
-  </Flex>
+  </Flex.Center>
 )
 
 export default StyledComponents

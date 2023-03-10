@@ -14,7 +14,7 @@ const Box = () => (
 )
 
 const Emotion = () => (
-  <Flex as="a" justify="center" align="center">
+  <Flex.Center>
     <Box />
     <Box />
     <Box />
@@ -28,7 +28,7 @@ const Emotion = () => (
       <Box />
       <Box />
     </Stack.Horizontal>
-  </Flex>
+  </Flex.Center>
 )
 
 export default Emotion
