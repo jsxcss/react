@@ -285,5 +285,8 @@
   "theme.tags.tagsPageTitle": {
     "message": "태그",
     "description": "The title of the tag list page"
+  },
+  "CSS components in JSX easily": {
+    "message": "CSS components in JSX easily"
   }
 }

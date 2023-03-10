@@ -1,1 +1,1 @@
-export type { JSXCSSBox, BoxProps } from './Box'
+export * from './Box'

@@ -1,2 +1,2 @@
-export { flex } from './flex'
-export { gutter } from './gutter'
+export * from './flex'
+export * from './gutter'
