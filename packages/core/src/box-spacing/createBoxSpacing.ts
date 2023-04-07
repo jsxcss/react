@@ -1,14 +1,13 @@
 import { AnyFunction, CSSPixelValue, coerceCssPixelValue } from '../utils'
 
-type BoxSpacingOptionPropertyName = 'x' | 'y' | 'top' | 'right' | 'bottom' | 'left'
-type BoxSpacingOptionObjectCase<Option extends BoxSpacingOptionPropertyName> = {
-  [O in Option]?: CSSPixelValue
+type BoxSpacingOptionProperty = 'x' | 'y' | 'top' | 'right' | 'bottom' | 'left'
+type BoxSpacingOptionObjectCase<T extends BoxSpacingOptionProperty> = {
+  [key in T]?: CSSPixelValue
 } & {
-  [P in Exclude<BoxSpacingOptionPropertyName, Option>]?: never
+  [key in Exclude<BoxSpacingOptionProperty, T>]?: never
 }
 
-const cssProperties = ['padding', 'margin'] as const
-export type CSSProperty = (typeof cssProperties)[number]
+type CSSProperty = 'padding' | 'margin'
 
 export type BoxSpacingOption =
   | BoxSpacingOptionObjectCase<'x' | 'y'>
@@ -27,12 +26,7 @@ export const createSpacing =
     `)
     }
 
-    const box: {
-      top?: CSSPixelValue
-      right?: CSSPixelValue
-      bottom?: CSSPixelValue
-      left?: CSSPixelValue
-    } = {}
+    const box: BoxSpacingOptionObjectCase<'top' | 'right' | 'bottom' | 'left'> = {}
 
     if (option.x !== undefined) {
       box.left = option.x
