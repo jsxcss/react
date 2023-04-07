@@ -1,8 +1,6 @@
-type CSSPixelValue = string | number
-const coerceCssPixelValue = (value: CSSPixelValue) => (typeof value === 'string' ? value : `${value}px`)
+import { AnyFunction, CSSPixelValue, coerceCssPixelValue } from '../utils'
 
-const properties = ['x', 'y', 'top', 'right', 'bottom', 'left'] as const
-type BoxSpacingOptionPropertyName = (typeof properties)[number]
+type BoxSpacingOptionPropertyName = 'x' | 'y' | 'top' | 'right' | 'bottom' | 'left'
 type BoxSpacingOptionObjectCase<Option extends BoxSpacingOptionPropertyName> = {
   [O in Option]?: CSSPixelValue
 } & {
@@ -20,11 +18,11 @@ export type BoxSpacingOption =
   | CSSPixelValue
 
 export const createSpacing =
-  <T extends (...params: any[]) => any = (...params: any[]) => any>(plugin: T) =>
+  <T extends AnyFunction = AnyFunction>(css: T) =>
   (cssProperty: CSSProperty) =>
   (option: BoxSpacingOption): ReturnType<T> => {
     if (typeof option === 'number' || typeof option === 'string') {
-      return plugin(`
+      return css(`
       ${cssProperty}: ${coerceCssPixelValue(option)};
     `)
     }
@@ -58,7 +56,7 @@ export const createSpacing =
     }
 
     if (box.top != null && box.right != null && box.bottom != null && box.left != null) {
-      return plugin(`
+      return css(`
       ${cssProperty}: ${coerceCssPixelValue(box.top)} ${coerceCssPixelValue(box.right)}
         ${coerceCssPixelValue(box.bottom)} ${coerceCssPixelValue(box.left)}
     `)
@@ -69,5 +67,5 @@ export const createSpacing =
       .map(([dir, value]) => `${cssProperty}-${dir}: ${coerceCssPixelValue(value!)}`)
       .join(';')
 
-    return plugin(style)
+    return css(style)
   }

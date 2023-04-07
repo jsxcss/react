@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { AutoLayout, Flex, Stack } from '@jsxcss/emotion'
+import { AutoLayout, Flex, Stack, boxShadow } from '@jsxcss/emotion'
 import { motion } from 'framer-motion'
 
 const Box = ({ size = 100 }: { size?: number }) => (
@@ -9,6 +9,13 @@ const Box = ({ size = 100 }: { size?: number }) => (
       width: ${size}px;
       height: ${size}px;
       border-radius: 16px;
+      ${boxShadow({
+        x: 0,
+        y: 0,
+        blur: 42,
+        spread: 0,
+        color: '#00000030',
+      })}
     `}
   />
 )
