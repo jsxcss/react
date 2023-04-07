@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ElementType, forwardRef, useMemo } from 'react'
 import { css } from '@emotion/react'
-import { AutoLayoutComponentType, AutoLayoutProps, XAxis, YAxis } from '@jsxcss/core'
+import { AutoLayoutComponentType, AutoLayoutProps, FlexOptions, XAxis, YAxis } from '@jsxcss/core'
 import * as utils from '../../utils'
 
 export const AutoLayout = forwardRef(function AutoLayout<T extends ElementType>(
@@ -32,9 +32,9 @@ export const AutoLayout = forwardRef(function AutoLayout<T extends ElementType>(
     return { x: x as XAxis, y: y as YAxis }
   }, [align])
 
-  const flexParam = useMemo((): Parameters<typeof utils.flex>[0] => {
-    let align: Parameters<typeof utils.flex>[0]['align']
-    let justify: Parameters<typeof utils.flex>[0]['justify']
+  const flexParam = useMemo((): FlexOptions => {
+    let align: FlexOptions['align']
+    let justify: FlexOptions['justify']
 
     if (direction === 'vertical') {
       if (axis.y) {

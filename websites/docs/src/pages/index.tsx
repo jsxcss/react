@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from '@docusaurus/Link'
+import Translate from '@docusaurus/Translate'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
 import Layout from '@theme/Layout'
 import clsx from 'clsx'
 import styles from './index.module.css'
-import Translate from '@docusaurus/Translate'
 
 function HomepageHeader() {
   return (

@@ -207,6 +207,7 @@ importers:
       '@docusaurus/module-type-aliases': 2.2.0
       '@docusaurus/preset-classic': 2.2.0
       '@docusaurus/theme-classic': ^2.2.0
+      '@jsxcss/eslint': '*'
       '@mdx-js/react': ^1.6.22
       '@tsconfig/docusaurus': ^1.0.5
       '@types/node': ^18.11.9
@@ -231,6 +232,7 @@ importers:
     devDependencies:
       '@docusaurus/module-type-aliases': 2.2.0_sfoxds7t5ydpegc3knd667wn6m
       '@docusaurus/theme-classic': 2.3.1_jgxnvbe4faw3ohf4h6p42qq6oy
+      '@jsxcss/eslint': link:../../configs/eslint
       '@tsconfig/docusaurus': 1.0.6
       '@types/node': 18.11.18
       '@types/react': 18.0.27

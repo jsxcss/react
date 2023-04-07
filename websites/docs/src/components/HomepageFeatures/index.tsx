@@ -1,7 +1,7 @@
 import React from 'react'
+import Translate from '@docusaurus/Translate'
 import clsx from 'clsx'
 import styles from './styles.module.css'
-import Translate from '@docusaurus/Translate'
 
 type FeatureItem = {
   title: JSX.Element
