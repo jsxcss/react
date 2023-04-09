@@ -4,15 +4,15 @@ import { css } from '@emotion/react'
 import { StackComponentType, StackOptions, StackProps } from '@jsxcss/core'
 import { flex, gutter } from '../../utils'
 
-const createStackComponent = (stackOptions?: StackOptions): StackComponentType =>
+const createStackComponent = (stackOptions: StackOptions = {}): StackComponentType =>
   forwardRef(function Stack<T extends ElementType>(props: StackProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
     const {
       as = 'div',
-      direction = stackOptions?.direction ?? 'vertical',
-      spacing = stackOptions?.spacing ?? 24,
-      selector = stackOptions?.selector,
-      align = stackOptions?.align,
-      justify = stackOptions?.justify,
+      direction = stackOptions.direction ?? 'vertical',
+      spacing = stackOptions.spacing ?? 24,
+      selector = stackOptions.selector,
+      align = stackOptions.align,
+      justify = stackOptions.justify,
       ...rest
     } = props
     const Component = as

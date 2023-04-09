@@ -4,15 +4,15 @@ import styled, { css } from 'styled-components'
 import { flex, gutter } from '../../utils'
 
 const Component = styled.div``
-const createStackComponent = (stackOptions?: StackOptions): StackComponentType =>
+const createStackComponent = (stackOptions: StackOptions = {}): StackComponentType =>
   forwardRef(function Stack<T extends ElementType>(props: StackProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
     const {
       as = 'div',
-      direction = stackOptions?.direction ?? 'vertical',
-      spacing = stackOptions?.spacing ?? 24,
-      selector = stackOptions?.selector,
-      align = stackOptions?.align,
-      justify = stackOptions?.justify,
+      direction = stackOptions.direction ?? 'vertical',
+      spacing = stackOptions.spacing ?? 24,
+      selector = stackOptions.selector,
+      align = stackOptions.align,
+      justify = stackOptions.justify,
       ...rest
     } = props
     return (

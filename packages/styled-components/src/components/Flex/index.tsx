@@ -4,13 +4,13 @@ import styled from 'styled-components'
 import { flex } from '../../utils'
 
 const Component = styled.div``
-const createFlexComponent = (flexOptions?: FlexOptions): FlexComponentType =>
+const createFlexComponent = (flexOptions: FlexOptions = {}): FlexComponentType =>
   forwardRef(function Flex<T extends ElementType>(props: FlexProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
     const {
       as = 'div',
-      direction = flexOptions?.direction ?? 'row',
-      justify = flexOptions?.justify ?? 'flex-start',
-      align = flexOptions?.align ?? 'stretch',
+      direction = flexOptions.direction ?? 'row',
+      justify = flexOptions.justify ?? 'flex-start',
+      align = flexOptions.align ?? 'stretch',
       ...rest
     } = props
     return <Component as={as} ref={ref} css={flex({ direction, align, justify })} {...rest} />

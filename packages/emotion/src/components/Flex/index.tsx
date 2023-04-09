@@ -3,13 +3,13 @@ import { forwardRef } from 'react'
 import { FlexComponentType, FlexOptions, FlexProps } from '@jsxcss/core'
 import { flex } from '../../utils'
 
-const createFlexComponent = (flexOptions?: FlexOptions): FlexComponentType =>
+const createFlexComponent = (flexOptions: FlexOptions = {}): FlexComponentType =>
   forwardRef(function Flex<T extends ElementType>(props: FlexProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
     const {
       as = 'div',
-      direction = flexOptions?.direction ?? 'row',
-      justify = flexOptions?.justify ?? 'flex-start',
-      align = flexOptions?.align ?? 'stretch',
+      direction = flexOptions.direction ?? 'row',
+      justify = flexOptions.justify ?? 'flex-start',
+      align = flexOptions.align ?? 'stretch',
       ...rest
     } = props
     const Component = as
