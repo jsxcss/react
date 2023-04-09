@@ -1,6 +1,6 @@
 {
   "name": "@jsxcss/styled-components",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "keywords": [
     "jsxcss",
     "react"
@@ -35,11 +35,10 @@
     "type:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@jsxcss/core": "*"
+    "@jsxcss/core": "0.3.1"
   },
   "devDependencies": {
     "@jsxcss/babel": "*",
-    "@jsxcss/core": "*",
     "@jsxcss/eslint": "*",
     "@jsxcss/rollup": "*",
     "@jsxcss/tsconfig": "*",

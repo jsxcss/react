@@ -1,6 +1,6 @@
 {
   "name": "@jsxcss/emotion",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "keywords": [
     "jsxcss",
     "react"
@@ -35,13 +35,12 @@
     "type:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@jsxcss/core": "*"
+    "@jsxcss/core": "0.3.1"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/react": "^11.10.6",
     "@jsxcss/babel": "*",
-    "@jsxcss/core": "*",
     "@jsxcss/eslint": "*",
     "@jsxcss/rollup": "*",
     "@jsxcss/tsconfig": "*",
