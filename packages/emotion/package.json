@@ -1,6 +1,6 @@
 {
   "name": "@jsxcss/emotion",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "keywords": [
     "jsxcss",
     "react"
@@ -35,7 +35,7 @@
     "type:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@jsxcss/core": "0.3.1"
+    "@jsxcss/core": "0.4.0"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^11.10.0",
