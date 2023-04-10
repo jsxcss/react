@@ -30,5 +30,9 @@
   "sidebar.tutorialSidebar.category.styled-components": {
     "message": "styled-components",
     "description": "The label for category styled-components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.@jsxcss/devtool": {
+    "message": "@jsxcss/devtool",
+    "description": "The label for category @jsxcss/devtool in sidebar tutorialSidebar"
   }
 }
