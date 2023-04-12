@@ -96,7 +96,7 @@ const createAutoLayoutComponent = (autoLayoutOptions: AutoLayoutOptions = {}): A
         css={css`
           ${utils.flex(flexParam)}
           ${utils.gutter({ direction, spacing: space })}
-        ${utils.padding(padding)}
+          ${utils.padding(padding)}
         `}
         {...rest}
         ref={ref}
