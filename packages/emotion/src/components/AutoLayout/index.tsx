@@ -1,20 +1,20 @@
 import { ComponentPropsWithRef, ElementType, forwardRef, useMemo } from 'react'
-import { css } from '@emotion/react'
-import { AutoLayoutComponentType, AutoLayoutOptions, AutoLayoutProps, FlexOptions, XAxis, YAxis } from '@jsxcss/core'
-import * as utils from '../../utils'
+import { AutoLayoutComponentType, AutoLayoutOption, AutoLayoutProps, FlexOption, XAxis, YAxis } from '@jsxcss/core'
+import { padding as utilsPadding } from '../../utils'
+import { Stack } from '../Stack'
 
-const createAutoLayoutComponent = (autoLayoutOptions: AutoLayoutOptions = {}): AutoLayoutComponentType =>
+const createAutoLayoutComponent = (defaultAutoLayoutOption: AutoLayoutOption = {}): AutoLayoutComponentType =>
   forwardRef(function AutoLayout<T extends ElementType>(
     props: AutoLayoutProps<T>,
     ref: ComponentPropsWithRef<T>['ref']
   ) {
     const {
-      direction = autoLayoutOptions.direction ?? 'vertical',
-      space = autoLayoutOptions.space ?? 0,
-      spacingMode = autoLayoutOptions.spacingMode ?? 'packed',
-      padding = autoLayoutOptions.padding ?? 0,
-      align = autoLayoutOptions.align ?? 'top-left',
-      as,
+      direction = defaultAutoLayoutOption.direction ?? 'vertical',
+      spacing = defaultAutoLayoutOption.spacing ?? 0,
+      spacingMode = defaultAutoLayoutOption.spacingMode ?? 'packed',
+      padding = defaultAutoLayoutOption.padding ?? 0,
+      align = defaultAutoLayoutOption.align ?? 'top-left',
+      as = 'div',
       ...rest
     } = props
 
@@ -33,9 +33,9 @@ const createAutoLayoutComponent = (autoLayoutOptions: AutoLayoutOptions = {}): A
       return { x: x as XAxis, y: y as YAxis }
     }, [align])
 
-    const flexParam = useMemo((): FlexOptions => {
-      let align: FlexOptions['align']
-      let justify: FlexOptions['justify']
+    const flexOption = useMemo((): Pick<FlexOption, 'align' | 'justify'> => {
+      let align: FlexOption['align']
+      let justify: FlexOption['justify']
 
       if (direction === 'vertical') {
         if (axis.y) {
@@ -86,19 +86,18 @@ const createAutoLayoutComponent = (autoLayoutOptions: AutoLayoutOptions = {}): A
         justify = 'space-between'
       }
 
-      return { direction: direction === 'vertical' ? 'column' : 'row', align, justify }
+      return { align, justify }
     }, [axis, direction, spacingMode])
 
-    const Component = as || 'div'
-
     return (
-      <Component
-        css={css`
-          ${utils.flex(flexParam)}
-          ${utils.gutter({ direction, spacing: space })}
-          ${utils.padding(padding)}
-        `}
+      <Stack
         {...rest}
+        direction={direction}
+        spacing={spacing}
+        justify={flexOption.justify}
+        align={flexOption.align}
+        css={utilsPadding(padding)}
+        as={as}
         ref={ref}
       />
     )

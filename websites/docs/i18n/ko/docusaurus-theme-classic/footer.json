@@ -31,10 +31,6 @@
     "message": "@jsxcss/emotion",
     "description": "The label of footer link with label=@jsxcss/emotion linking to https://www.npmjs.com/package/@jsxcss/emotion"
   },
-  "link.item.label.@jsxcss/styled-components": {
-    "message": "@jsxcss/styled-components",
-    "description": "The label of footer link with label=@jsxcss/styled-components linking to https://www.npmjs.com/package/@jsxcss/styled-components"
-  },
   "copyright": {
     "message": "Copyright © 2023 Jonghyeon Ko and the JSXCSS authors.",
     "description": "The footer copyright"
@@ -43,8 +39,8 @@
     "message": "Example of @jsxcss/emotion",
     "description": "The label of footer link with label=Example of @jsxcss/emotion linking to https://emotion.jsxcss.org"
   },
-  "link.item.label.Example of @jsxcss/styled-components": {
-    "message": "Example of @jsxcss/styled-components",
-    "description": "The label of footer link with label=Example of @jsxcss/styled-components linking to https://styled-components.jsxcss.org"
+  "link.item.label.@jsxcss/core": {
+    "message": "@jsxcss/core",
+    "description": "The label of footer link with label=@jsxcss/core linking to https://www.npmjs.com/package/@jsxcss/core"
   }
 }

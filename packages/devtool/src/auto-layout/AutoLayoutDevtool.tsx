@@ -76,15 +76,15 @@ export const AutoLayoutDevTool = ({
         />
       </div>
       <div>
-        <div>space: {typeof control.props.space === 'number' ? control.props.space : 'undefined'}</div>
+        <div>spacing: {typeof control.props.spacing === 'number' ? control.props.spacing : 'undefined'}</div>
         <input
-          name="space"
-          value={typeof control.props.space === 'number' ? control.props.space : 0}
+          name="spacing"
+          value={typeof control.props.spacing === 'number' ? control.props.spacing : 0}
           type="range"
           min={-200}
           max={200}
           onChange={(e: any) =>
-            handleChange({ ...e, target: { ...e.target, name: 'space', value: Number(e.target.value) } })
+            handleChange({ ...e, target: { ...e.target, name: 'spacing', value: Number(e.target.value) } })
           }
         />
       </div>

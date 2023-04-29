@@ -1,18 +1,18 @@
-react:
-  - packages/react/*
-  - packages/react/**/*
-react-query:
-  - packages/react-query/*
-  - packages/react-query/**/*
+"@jsxcss/core":
+  - packages/core/*
+  - packages/core/**/*
+"@jsxcss/emotion":
+  - packages/emotion/*
+  - packages/emotion/**/*
+"@jsxcss/devtool":
+  - packages/devtool/*
+  - packages/devtool/**/*
 websites/docs:
   - websites/docs/*
   - websites/docs/**/*
 websites/emotion:
   - websites/emotion/*
   - websites/emotion/**/*
-websites/styled-components:
-  - websites/styled-components/*
-  - websites/styled-components/**/*
 babel:
   - configs/babel/*
   - configs/babel/**/*
@@ -29,8 +29,6 @@ configuration:
   - next.config.js
   - package*.json
   - "**/.*"
-  - "**/jest*.ts"
-  - "**/jest*.js"
   - "**/tsconfig*.json"
   - .*/**
 documentation:

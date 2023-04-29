@@ -5,3 +5,5 @@ export type AsProps<C extends ElementType> = ComponentPropsWithoutRef<C> & {
 }
 
 export type AxisDirection = 'vertical' | 'horizontal'
+
+export type CSSPixelValue = string | number

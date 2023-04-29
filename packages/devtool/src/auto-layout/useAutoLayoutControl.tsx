@@ -1,16 +1,16 @@
 import { useMemo, useRef, useState } from 'react'
-import type { AutoLayoutOptions } from '@jsxcss/core'
+import type { AutoLayoutOption } from '@jsxcss/core'
 
-export const useAutoLayoutControl = (initialOptions: AutoLayoutOptions = {}) => {
-  const initialProps = useRef(initialOptions)
-  const [props, setProps] = useState(initialOptions)
+export const useAutoLayoutControl = (initialOption: AutoLayoutOption = {}) => {
+  const initialProps = useRef(initialOption)
+  const [props, setProps] = useState(initialOption)
   type Control = {
-    props: AutoLayoutOptions
+    props: AutoLayoutOption
     setProps: typeof setProps
     reset: () => void
   }
   return useMemo<{
-    props: AutoLayoutOptions
+    props: AutoLayoutOption
     control: Control
   }>(
     () => ({
@@ -21,6 +21,6 @@ export const useAutoLayoutControl = (initialOptions: AutoLayoutOptions = {}) => 
         reset: () => setProps(initialProps.current),
       },
     }),
-    [setProps, props, initialProps]
+    [setProps, props]
   )
 }

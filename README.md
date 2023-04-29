@@ -1,6 +1,6 @@
 <div align="center">
-  <a href="https://jsxcss.org" title="JSXCSS - Layout components for emotion/styled-components easily">
-    <img src="https://raw.githubusercontent.com/jsxcss/react/main/websites/docs/static/banner.png" alt="JSXCSS - Layout components for emotion/styled-components easily" />
+  <a href="https://jsxcss.org" title="JSXCSS - Layout components for emotion easily">
+    <img src="https://raw.githubusercontent.com/jsxcss/react/main/websites/docs/static/banner.png" alt="JSXCSS - Layout components for emotion easily" />
   </a>
 </div>
 
@@ -18,7 +18,7 @@
 
 [OFFICIAL DOCS](https://jsxcss.org) | [DEPENDENCY GRAPH](https://graph.jsxcss.org) | [CONTRIBUTING](https://github.com/jsxcss/react/pulls) | [LICENSE](./LICENSE)
 
-[@jsxcss/emotion](emotion.jsxcss.org) | [@jsxcss/styled-components](styled-components.jsxcss.org)
+[@jsxcss/emotion](emotion.jsxcss.org)
 
 </div>
 
@@ -29,21 +29,12 @@ All common interfaces of jsxcss packages
 - Box
 - Flex
 - Stack
-- Container (Planned)
-- Grid (Planned)
-- Center (Planned)
 
 # [@jsxcss/emotion](https://jsxcss.org/docs/emotion/README.i18n)
 
 [![npm version](https://img.shields.io/npm/v/@jsxcss/emotion?color=61DAFB)](https://www.npmjs.com/package/@jsxcss/emotion) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@jsxcss/emotion?color=blue) ![npm](https://img.shields.io/npm/dm/@jsxcss/emotion?color=blue)
 
 Implementation package of @jsxcss/core for [emotion](https://emotion.sh)
-
-# [@jsxcss/styled-components](https://jsxcss.org/docs/styled-components/README.i18n)
-
-[![npm version](https://img.shields.io/npm/v/@jsxcss/styled-components?color=61DAFB)](https://www.npmjs.com/package/@jsxcss/styled-components) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@jsxcss/styled-components?color=blue) ![npm](https://img.shields.io/npm/dm/@jsxcss/styled-components?color=blue)
-
-Implementation package of @jsxcss/core for [styled-components](https://styled-components.com)
 
 # License
 
