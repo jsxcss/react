@@ -1,5 +1,6 @@
 {
   "name": "@jsxcss/rollup",
+  "version": "0.0.0-development",
   "private": true,
   "main": "index.js",
   "dependencies": {
@@ -14,7 +15,7 @@
     "builtin-modules": "^3.3.0"
   },
   "devDependencies": {
-    "@jsxcss/eslint": "*",
+    "@jsxcss/eslint": "workspace:*",
     "rollup": "^3.5.1"
   },
   "peerDependencies": {

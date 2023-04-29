@@ -1,5 +1,6 @@
 {
   "name": "@jsxcss/tsconfig",
+  "version": "0.0.0-development",
   "private": true,
   "files": [
     "base.json",

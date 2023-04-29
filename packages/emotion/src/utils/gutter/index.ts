@@ -1,11 +1,11 @@
 import { css } from '@emotion/react'
-import { AxisDirection, GutterOptions } from '@jsxcss/core'
+import { AxisDirection, GutterOption } from '@jsxcss/core'
 
-export const gutter = ({ direction, spacing = 24, selector = '*:not(style)' }: GutterOptions) =>
+export const gutter = ({ direction, spacing = 24, selector = '*:not(style)' }: GutterOption) =>
   get[direction]({ spacing, selector })
 
 const get: {
-  [key in AxisDirection]: (options: Required<Pick<GutterOptions, 'spacing' | 'selector'>>) => ReturnType<typeof css>
+  [key in AxisDirection]: (option: Required<Pick<GutterOption, 'spacing' | 'selector'>>) => ReturnType<typeof css>
 } = {
   horizontal: ({ spacing, selector }) => css`
     & > ${selector} ~ ${selector} {

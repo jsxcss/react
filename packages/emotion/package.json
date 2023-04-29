@@ -35,15 +35,15 @@
     "type:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@jsxcss/core": "0.4.1"
+    "@jsxcss/core": "workspace:0.4.1"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/react": "^11.10.6",
-    "@jsxcss/babel": "*",
-    "@jsxcss/eslint": "*",
-    "@jsxcss/rollup": "*",
-    "@jsxcss/tsconfig": "*",
+    "@jsxcss/babel": "workspace:*",
+    "@jsxcss/eslint": "workspace:*",
+    "@jsxcss/rollup": "workspace:*",
+    "@jsxcss/tsconfig": "workspace:*",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
@@ -54,7 +54,7 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@emotion/react": "*",
+    "@emotion/react": "workspace:*",
     "react": "^16.8 || ^17 || ^18"
   },
   "publishConfig": {

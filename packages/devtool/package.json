@@ -34,11 +34,11 @@
     "type:check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@jsxcss/babel": "*",
-    "@jsxcss/core": "0.4.1",
-    "@jsxcss/eslint": "*",
-    "@jsxcss/rollup": "*",
-    "@jsxcss/tsconfig": "*",
+    "@jsxcss/babel": "workspace:*",
+    "@jsxcss/core": "workspace:0.4.1",
+    "@jsxcss/eslint": "workspace:*",
+    "@jsxcss/rollup": "workspace:*",
+    "@jsxcss/tsconfig": "workspace:*",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",

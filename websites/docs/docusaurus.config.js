@@ -5,7 +5,6 @@ const package = {
   intro: 'websites/docs/',
   core: 'packages/',
   emotion: 'packages/',
-  'styled-components': 'packages/',
 }
 
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
@@ -115,10 +114,6 @@ const config = {
                 label: 'Example of @jsxcss/emotion',
                 href: 'https://emotion.jsxcss.org',
               },
-              {
-                label: 'Example of @jsxcss/styled-components',
-                href: 'https://styled-components.jsxcss.org',
-              },
             ],
           },
           {
@@ -138,8 +133,8 @@ const config = {
                 href: 'https://www.npmjs.com/package/@jsxcss/emotion',
               },
               {
-                label: '@jsxcss/styled-components',
-                href: 'https://www.npmjs.com/package/@jsxcss/styled-components',
+                label: '@jsxcss/core',
+                href: 'https://www.npmjs.com/package/@jsxcss/core',
               },
             ],
           },

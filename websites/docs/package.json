@@ -27,7 +27,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.2.0",
     "@docusaurus/theme-classic": "^2.2.0",
-    "@jsxcss/eslint": "*",
+    "@jsxcss/eslint": "workspace:*",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",

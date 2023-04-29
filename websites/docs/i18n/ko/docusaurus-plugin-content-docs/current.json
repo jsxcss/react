@@ -15,10 +15,6 @@
     "message": "Introduction",
     "description": "The label for category Introduction in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.@jsxcss/styled-components": {
-    "message": "@jsxcss/styled-components",
-    "description": "The label for category @jsxcss/styled-components in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.core": {
     "message": "core",
     "description": "The label for category core in sidebar tutorialSidebar"
@@ -26,10 +22,6 @@
   "sidebar.tutorialSidebar.category.emotion": {
     "message": "emotion",
     "description": "The label for category emotion in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.styled-components": {
-    "message": "styled-components",
-    "description": "The label for category styled-components in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.@jsxcss/devtool": {
     "message": "@jsxcss/devtool",
