@@ -1,10 +1,10 @@
-core:
+"@jsxcss/core":
   - packages/core/*
   - packages/core/**/*
-emotion:
+"@jsxcss/emotion":
   - packages/emotion/*
   - packages/emotion/**/*
-devtool:
+"@jsxcss/devtool":
   - packages/devtool/*
   - packages/devtool/**/*
 websites/docs:
