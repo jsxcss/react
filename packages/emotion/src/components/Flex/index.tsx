@@ -1,11 +1,14 @@
 import type { ComponentPropsWithRef, ElementType } from 'react'
 import { forwardRef } from 'react'
 import { FlexComponentType, FlexOption, FlexProps } from '@jsxcss/core'
+import { useMediaQuery } from '../../contexts'
 import * as utils from '../../utils'
 import { Box } from '../Box'
 
 const createFlexComponent = (flexOption: FlexOption = {}): FlexComponentType =>
   forwardRef(function Flex<T extends ElementType>(props: FlexProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
+    const mediaQuery = useMediaQuery()
+
     const {
       as = 'div',
       direction = flexOption.direction,
@@ -14,7 +17,7 @@ const createFlexComponent = (flexOption: FlexOption = {}): FlexComponentType =>
       ...rest
     } = props
 
-    return <Box {...rest} as={as} ref={ref} css={utils.flex({ direction, align, justify })} />
+    return <Box as={as} ref={ref} css={utils.flex({ direction, align, justify }, mediaQuery)} {...rest} />
   })
 
 type FlexType = FlexComponentType & {

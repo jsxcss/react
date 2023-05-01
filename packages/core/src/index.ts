@@ -22,3 +22,4 @@ export type {
   XAxis,
   YAxis,
 } from './utils'
+export type { OptionWithMediaQuery } from './contexts'

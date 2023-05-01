@@ -1,21 +1,15 @@
 import { css } from '@emotion/react'
 import s, { AutoLayout, Flex, Stack } from '@jsxcss/emotion'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter } from 'next/router'
-import { ComponentPropsWithoutRef, forwardRef, PropsWithChildren, useEffect } from 'react'
-import { useToggle, useWindowSize } from '../hooks'
+import { ComponentPropsWithoutRef, forwardRef, PropsWithChildren } from 'react'
+import { useToggle } from '../hooks'
 
 const Web = () => {
-  const windowSize = useWindowSize()
   const [isLoading, toggleIsLoading] = useToggle(true)
-  const router = useRouter()
-
-  useEffect(() => {
-    router.replace(`?width=${windowSize.width}`)
-  }, [windowSize.width])
 
   return (
     <Stack.Vertical
+      direction={['vertical', 'vertical', 'horizontal']}
       as={motion.div}
       whileHover={{ scale: 0.99 }}
       css={css(
@@ -34,43 +28,46 @@ const Web = () => {
       >
         @jsxcss/emotion
       </Flex>
-      <Stack.Vertical
-        css={css(
-          s.padding(12),
-          s.color({ backgroundColor: 'black' }),
-          s.border({ width: 1, style: 'solid', color: 'lightgray', radius: 16 })
-        )}
-      >
-        <Button loading={isLoading} onClick={() => toggleIsLoading()}>
-          Press Button
-        </Button>
-        <Button loading={isLoading} onClick={() => toggleIsLoading()}>
-          Press Button
-        </Button>
-        <Button loading={isLoading} onClick={() => toggleIsLoading()}>
-          Press Button
-        </Button>
+      <Stack.Vertical spacing={[12, 24]} css={{ flex: 1 }}>
+        <Stack
+          direction={['vertical', 'horizontal']}
+          justify={['space-between']}
+          spacing={[12, 8]}
+          css={css(
+            s.padding(12),
+            s.color({ backgroundColor: 'black' }),
+            s.border({ width: 1, style: 'solid', color: 'lightgray', radius: 16 })
+          )}
+        >
+          <Button loading={isLoading} onClick={() => toggleIsLoading()}>
+            Press Button
+          </Button>
+          <Button loading={isLoading} onClick={() => toggleIsLoading()}>
+            Press Button
+          </Button>
+          <Button loading={isLoading} onClick={() => toggleIsLoading()}>
+            Press Button
+          </Button>
+        </Stack>
+        <AutoLayout
+          padding={{ x: 16, y: 24 }}
+          css={css(
+            s.padding(12),
+            s.color({ backgroundColor: 'black' }),
+            s.border({ width: 1, style: 'solid', color: 'lightgray', radius: 16 })
+          )}
+        >
+          <Button loading={isLoading} onClick={() => toggleIsLoading()}>
+            Press Button
+          </Button>
+          <Button loading={isLoading} onClick={() => toggleIsLoading()}>
+            Press Button
+          </Button>
+          <Button loading={isLoading} onClick={() => toggleIsLoading()}>
+            Press Button
+          </Button>
+        </AutoLayout>
       </Stack.Vertical>
-      <AutoLayout
-        direction={windowSize.width < 740 ? 'vertical' : 'horizontal'}
-        spacing={windowSize.width < 740 ? 24 : 24}
-        padding={{ x: 16, y: 24 }}
-        css={css(
-          s.padding(12),
-          s.color({ backgroundColor: 'black' }),
-          s.border({ width: 1, style: 'solid', color: 'lightgray', radius: 16 })
-        )}
-      >
-        <Button loading={isLoading} onClick={() => toggleIsLoading()}>
-          Press Button
-        </Button>
-        <Button loading={isLoading} onClick={() => toggleIsLoading()}>
-          Press Button
-        </Button>
-        <Button loading={isLoading} onClick={() => toggleIsLoading()}>
-          Press Button
-        </Button>
-      </AutoLayout>
     </Stack.Vertical>
   )
 }
@@ -94,6 +91,7 @@ const Button = forwardRef<
       ${s.border({ radius: 12, style: 'none' })};
       cursor: pointer;
       position: relative;
+      flex: 1;
     `}
     {...rest}
   >

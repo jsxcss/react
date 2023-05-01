@@ -1,20 +1,19 @@
 import { css } from '@emotion/react'
-import { AxisDirection, GutterOption } from '@jsxcss/core'
+import { GutterOption, OptionWithMediaQuery } from '@jsxcss/core'
+import { MediaQuery } from '../../contexts'
 
-export const gutter = ({ direction, spacing = 24, selector = '*:not(style)' }: GutterOption) =>
-  get[direction]({ spacing, selector })
+export const gutter = ({ spacing = 24 }: OptionWithMediaQuery<GutterOption>, mediaQuery?: MediaQuery) => {
+  if (mediaQuery) {
+    return css(
+      ...mediaQuery.fn({
+        gap: spacing,
+      })
+    )
+  }
 
-const get: {
-  [key in AxisDirection]: (option: Required<Pick<GutterOption, 'spacing' | 'selector'>>) => ReturnType<typeof css>
-} = {
-  horizontal: ({ spacing, selector }) => css`
-    & > ${selector} ~ ${selector} {
-      margin-left: ${spacing}px;
-    }
-  `,
-  vertical: ({ spacing, selector }) => css`
-    & > ${selector} ~ ${selector} {
-      margin-top: ${spacing}px;
-    }
-  `,
+  if (Array.isArray(spacing)) {
+    throw new Error('If you want to use array, mediaQuery is required')
+  }
+
+  return css({ gap: spacing })
 }
