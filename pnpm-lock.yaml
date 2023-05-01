@@ -180,7 +180,7 @@ importers:
         specifier: workspace:*
         version: link:../../configs/babel
       '@jsxcss/core':
-        specifier: workspace:1.0.0
+        specifier: workspace:1.1.0
         version: link:../core
       '@jsxcss/eslint':
         specifier: workspace:*
@@ -219,7 +219,7 @@ importers:
   packages/emotion:
     dependencies:
       '@jsxcss/core':
-        specifier: workspace:1.0.0
+        specifier: workspace:1.1.0
         version: link:../core
     devDependencies:
       '@emotion/babel-preset-css-prop':
@@ -329,10 +329,10 @@ importers:
         specifier: ^11.10.6
         version: 11.10.6(@types/react@18.0.27)(react@18.2.0)
       '@jsxcss/devtool':
-        specifier: workspace:1.0.0
+        specifier: workspace:1.1.0
         version: link:../../packages/devtool
       '@jsxcss/emotion':
-        specifier: workspace:1.0.0
+        specifier: workspace:1.1.0
         version: link:../../packages/emotion
       axios:
         specifier: ^1.2.0
