@@ -22,9 +22,5 @@
   "sidebar.tutorialSidebar.category.emotion": {
     "message": "emotion",
     "description": "The label for category emotion in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.@jsxcss/devtool": {
-    "message": "@jsxcss/devtool",
-    "description": "The label for category @jsxcss/devtool in sidebar tutorialSidebar"
   }
 }
