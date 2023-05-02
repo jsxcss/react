@@ -4,9 +4,6 @@
 "@jsxcss/emotion":
   - packages/emotion/*
   - packages/emotion/**/*
-"@jsxcss/devtool":
-  - packages/devtool/*
-  - packages/devtool/**/*
 websites/docs:
   - websites/docs/*
   - websites/docs/**/*
