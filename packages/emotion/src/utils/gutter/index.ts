@@ -4,11 +4,7 @@ import { MediaQuery } from '../../contexts'
 
 export const gutter = ({ spacing = 24 }: OptionWithMediaQuery<GutterOption>, mediaQuery?: MediaQuery) => {
   if (mediaQuery) {
-    return css(
-      ...mediaQuery.fn({
-        gap: spacing,
-      })
-    )
+    return css(...mediaQuery.css({ gap: spacing }))
   }
 
   if (Array.isArray(spacing)) {

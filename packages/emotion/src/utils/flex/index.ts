@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { FlexOption, OptionWithMediaQuery } from '@jsxcss/core'
+import { FlexOption, OptionWithMediaQuery, error } from '@jsxcss/core'
 import { MediaQuery } from '../../contexts'
 
 export const flex = (
@@ -7,18 +7,18 @@ export const flex = (
   mediaQuery?: MediaQuery
 ) => {
   if (mediaQuery) {
-    return css(
-      ...mediaQuery.fn({
-        display: 'flex',
-        flexDirection: direction,
-        alignItems: align,
-        justifyContent: justify,
-      })
-    )
+    const mediaQueried = mediaQuery.css({
+      display: 'flex',
+      flexDirection: direction,
+      alignItems: align,
+      justifyContent: justify,
+    })
+
+    return css(...mediaQueried)
   }
 
   if (Array.isArray(direction) || Array.isArray(justify) || Array.isArray(align)) {
-    throw new Error('If you want to use array, mediaQuery is required')
+    throw error.mediaQueryRequiredIn('flex')
   }
 
   return css({

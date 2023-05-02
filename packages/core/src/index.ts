@@ -1,3 +1,4 @@
+export { error } from './common'
 export type { AsProps, AxisDirection, CSSPixelValue } from './common'
 export type {
   AutoLayoutComponentType,
@@ -11,9 +12,7 @@ export type {
 } from './components'
 export type {
   AutoLayoutOption,
-  BoxShadowOption,
-  BoxSpacingOption,
-  BoxBorderOption,
+  BoxOption,
   BoxSizeOption,
   BoxColorOption,
   FlexOption,

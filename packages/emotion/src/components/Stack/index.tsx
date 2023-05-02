@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { css } from '@emotion/react'
 import { AxisDirection, StackComponentType, StackOption, StackProps } from '@jsxcss/core'
 import { useMediaQuery } from '../../contexts'
-import { flex, gutter } from '../../utils'
+import { box, flex, gutter } from '../../utils'
 import { Box } from '../Box'
 
 const createStackComponent = (defaultStackOption: StackOption = {}): StackComponentType =>
@@ -16,24 +16,67 @@ const createStackComponent = (defaultStackOption: StackOption = {}): StackCompon
       spacing = defaultStackOption.spacing,
       align = defaultStackOption.align,
       justify = defaultStackOption.justify,
+
+      border,
+      borderColor,
+      borderRadius,
+      borderStyle,
+      borderWidth,
+      height,
+      margin,
+      marginBottom,
+      marginLeft,
+      marginRight,
+      marginTop,
+      maxHeight,
+      maxWidth,
+      minHeight,
+      minWidth,
+      padding,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      paddingTop,
+      width,
       ...rest
     } = props
+
+    const flexDirection = Array.isArray(direction) ? getFlexDirectionInArray(direction) : getFlexDirection(direction)
+
     return (
       <Box
-        {...rest}
         as={as}
         ref={ref}
         css={css(
-          flex(
+          flex({ direction: flexDirection, align, justify }, mediaQuery),
+          gutter({ spacing }, mediaQuery),
+          box(
             {
-              direction: Array.isArray(direction) ? getFlexDirectionInArray(direction) : getFlexDirection(direction),
-              align,
-              justify,
+              borderColor,
+              borderRadius,
+              borderStyle,
+              borderWidth,
+              height,
+              margin,
+              marginBottom,
+              marginLeft,
+              marginRight,
+              marginTop,
+              maxHeight,
+              maxWidth,
+              minHeight,
+              minWidth,
+              padding,
+              paddingBottom,
+              paddingLeft,
+              paddingRight,
+              paddingTop,
+              width,
             },
             mediaQuery
-          ),
-          gutter({ spacing }, mediaQuery)
+          )
         )}
+        {...rest}
       />
     )
   })

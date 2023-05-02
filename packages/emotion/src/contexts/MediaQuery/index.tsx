@@ -1,6 +1,6 @@
 import { PropsWithChildren, createContext, useContext, useMemo } from 'react'
 
-export type MediaQuery = { pxs?: number[]; fn: ReturnType<typeof createCss> }
+export type MediaQuery = { pxs?: number[]; css: ReturnType<typeof createCss> }
 
 const MediaQueryContext = createContext<MediaQuery | undefined>(undefined)
 
@@ -10,7 +10,7 @@ export const MediaQueryProvider = ({
 }: PropsWithChildren<{ pxs: MediaQuery['pxs'] }>) => {
   const value = useMemo(() => {
     const breakpoints = pxs.map((bp) => `@media (min-width: ${bp}px)`)
-    return { pxs, fn: createCss(breakpoints) }
+    return { pxs, css: createCss(breakpoints) }
   }, [...pxs])
 
   return <MediaQueryContext.Provider value={value}>{children}</MediaQueryContext.Provider>
@@ -18,6 +18,10 @@ export const MediaQueryProvider = ({
 
 export const useMediaQuery = () => {
   const context = useContext(MediaQueryContext)
+
+  if (context === undefined) {
+    throw new Error('MediaQueryProvider is required by the parent component')
+  }
 
   return context
 }
