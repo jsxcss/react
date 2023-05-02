@@ -1,5 +1,11 @@
 # @jsxcss/core
 
+## 1.3.0
+
+### Minor Changes
+
+- b3703fb: feat(emotion): add responsive mediaQuery prop
+
 ## 1.2.0
 
 ### Minor Changes
