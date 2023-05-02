@@ -1,6 +1,6 @@
 {
   "name": "@jsxcss/devtool",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "keywords": [
     "jsxcss",
     "react"
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@jsxcss/babel": "workspace:*",
-    "@jsxcss/core": "workspace:1.1.0",
+    "@jsxcss/core": "workspace:1.2.0",
     "@jsxcss/eslint": "workspace:*",
     "@jsxcss/rollup": "workspace:*",
     "@jsxcss/tsconfig": "workspace:*",
