@@ -174,48 +174,6 @@ importers:
         specifier: ^4.9.5
         version: 4.9.5
 
-  packages/devtool:
-    devDependencies:
-      '@jsxcss/babel':
-        specifier: workspace:*
-        version: link:../../configs/babel
-      '@jsxcss/core':
-        specifier: workspace:1.2.0
-        version: link:../core
-      '@jsxcss/eslint':
-        specifier: workspace:*
-        version: link:../../configs/eslint
-      '@jsxcss/rollup':
-        specifier: workspace:*
-        version: link:../../configs/rollup
-      '@jsxcss/tsconfig':
-        specifier: workspace:*
-        version: link:../../configs/tsconfig
-      '@types/node':
-        specifier: ^18.11.9
-        version: 18.11.18
-      '@types/react':
-        specifier: ^18.0.25
-        version: 18.0.27
-      '@types/react-dom':
-        specifier: ^18.0.9
-        version: 18.0.10
-      eslint:
-        specifier: ^8.33.0
-        version: 8.33.0
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      rollup:
-        specifier: ^3.5.1
-        version: 3.13.0
-      typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
-
   packages/emotion:
     dependencies:
       '@jsxcss/core':
@@ -328,9 +286,6 @@ importers:
       '@emotion/react':
         specifier: ^11.10.6
         version: 11.10.6(@types/react@18.0.27)(react@18.2.0)
-      '@jsxcss/devtool':
-        specifier: workspace:1.2.0
-        version: link:../../packages/devtool
       '@jsxcss/emotion':
         specifier: workspace:1.2.0
         version: link:../../packages/emotion
