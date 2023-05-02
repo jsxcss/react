@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react'
-import { CSSPixelValue } from '../../common'
+
+export type BoxOption = BoxSizeOption & BoxSpacingOption & BorderOption
 
 // box-shadow
 export type BoxShadowOption =
@@ -14,34 +15,27 @@ export type BoxShadowOption =
 
 // box-border
 
-export type BoxBorderOption =
-  | {
-      radius?: CSSProperties['borderRadius']
-      width?: CSSProperties['borderWidth']
-      style?: CSSProperties['borderStyle']
-      color?: CSSProperties['borderColor']
-    }
-  | string
-
-// box-spacing: padding, margin
-type BoxSpacingOptionProperty = 'x' | 'y' | 'top' | 'right' | 'bottom' | 'left'
-type BoxSpacingOptionObjectCase<T extends BoxSpacingOptionProperty> = {
-  [key in T]?: CSSPixelValue
-} & {
-  [key in Exclude<BoxSpacingOptionProperty, T>]?: never
-}
-
-export type BoxSpacingOption =
-  | BoxSpacingOptionObjectCase<'x' | 'y'>
-  | BoxSpacingOptionObjectCase<'top' | 'right' | 'bottom' | 'left'>
-  | BoxSpacingOptionObjectCase<'x' | 'top' | 'bottom'>
-  | BoxSpacingOptionObjectCase<'y' | 'right' | 'left'>
-  | CSSPixelValue
+export type BorderOption = Pick<
+  CSSProperties,
+  'borderRadius' | 'borderColor' | 'borderWidth' | 'border' | 'borderStyle'
+>
 
 // box-size: height, minHeight, maxHeight, width, minWidth, maxWidth
 export type BoxSizeOption = Pick<
   CSSProperties,
   'height' | 'minHeight' | 'maxHeight' | 'width' | 'minWidth' | 'maxWidth'
+>
+
+export type BoxSpacingOption = BoxPaddingOption & BoxMarginOption
+
+export type BoxPaddingOption = Pick<
+  CSSProperties,
+  'padding' | 'paddingBottom' | 'paddingLeft' | 'paddingTop' | 'paddingRight'
+>
+
+export type BoxMarginOption = Pick<
+  CSSProperties,
+  'margin' | 'marginBottom' | 'marginLeft' | 'marginTop' | 'marginRight'
 >
 
 export type BoxColorOption = Pick<

@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
-    "@jsxcss/devtool": "workspace:1.1.0",
     "@jsxcss/emotion": "workspace:1.1.0",
     "axios": "^1.2.0",
     "framer-motion": "^9.0.7",

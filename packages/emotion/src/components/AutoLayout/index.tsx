@@ -1,6 +1,5 @@
 import { ComponentPropsWithRef, ElementType, forwardRef, useMemo } from 'react'
 import { AutoLayoutComponentType, AutoLayoutOption, AutoLayoutProps, FlexOption, XAxis, YAxis } from '@jsxcss/core'
-import { padding as utilsPadding } from '../../utils'
 import { Stack } from '../Stack'
 
 const createAutoLayoutComponent = (defaultAutoLayoutOption: AutoLayoutOption = {}): AutoLayoutComponentType =>
@@ -12,9 +11,14 @@ const createAutoLayoutComponent = (defaultAutoLayoutOption: AutoLayoutOption = {
       direction = defaultAutoLayoutOption.direction ?? 'vertical',
       spacing = defaultAutoLayoutOption.spacing ?? 0,
       spacingMode = defaultAutoLayoutOption.spacingMode ?? 'packed',
-      padding = defaultAutoLayoutOption.padding ?? 0,
       align = defaultAutoLayoutOption.align ?? 'top-left',
       as = 'div',
+
+      padding,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      paddingTop,
       ...rest
     } = props
 
@@ -91,14 +95,18 @@ const createAutoLayoutComponent = (defaultAutoLayoutOption: AutoLayoutOption = {
 
     return (
       <Stack
-        {...rest}
         direction={direction}
         spacing={spacing}
         justify={flexOption.justify}
         align={flexOption.align}
-        css={utilsPadding(padding)}
+        padding={padding}
+        paddingTop={paddingTop}
+        paddingBottom={paddingBottom}
+        paddingLeft={paddingLeft}
+        paddingRight={paddingRight}
         as={as}
         ref={ref}
+        {...rest}
       />
     )
   })

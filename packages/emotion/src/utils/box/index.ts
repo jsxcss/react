@@ -1,65 +1,110 @@
 import { css } from '@emotion/react'
-import { BoxBorderOption, BoxColorOption, BoxShadowOption, BoxSizeOption, BoxSpacingOption } from '@jsxcss/core'
+import { BoxOption, OptionWithMediaQuery, error } from '@jsxcss/core'
+import { MediaQuery } from '../../contexts'
 
-const createBoxSpacing =
-  <CSSProperty extends 'padding' | 'margin'>(cssProperty: CSSProperty) =>
-  (option: BoxSpacingOption) => {
-    if (typeof option === 'number' || typeof option === 'string') {
-      return css({ [cssProperty]: option })
-    }
+export const box = (
+  {
+    border,
+    borderColor,
+    borderRadius,
+    borderStyle,
+    borderWidth,
 
-    const box: BoxSpacingOption = {}
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+    padding,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
 
-    if (option.x !== undefined) {
-      box.left = option.x
-      box.right = option.x
-    }
-    if (option.y !== undefined) {
-      box.top = option.y
-      box.bottom = option.y
-    }
-    if (option.top !== undefined) {
-      box.top = option.top
-    }
-    if (option.right !== undefined) {
-      box.right = option.right
-    }
-    if (option.bottom !== undefined) {
-      box.bottom = option.bottom
-    }
-    if (option.left !== undefined) {
-      box.left = option.left
-    }
-
-    return css({
-      [`${cssProperty}Top`]: option.y ?? option.top,
-      [`${cssProperty}Bottom`]: option.y ?? option.bottom,
-      [`${cssProperty}Left`]: option.x ?? option.left,
-      [`${cssProperty}Right`]: option.x ?? option.right,
-    })
+    width,
+    maxWidth,
+    minWidth,
+    height,
+    maxHeight,
+    minHeight,
+  }: OptionWithMediaQuery<BoxOption>,
+  mediaQuery?: MediaQuery
+) => {
+  if (mediaQuery) {
+    return css(
+      ...mediaQuery.css({ height, maxHeight, maxWidth, minHeight, minWidth, width }),
+      ...mediaQuery.css({ border, borderColor, borderRadius, borderStyle, borderWidth }),
+      ...mediaQuery.css({
+        // padding
+        padding,
+        paddingBottom,
+        paddingLeft,
+        paddingRight,
+        paddingTop,
+        // margin
+        margin,
+        marginBottom,
+        marginLeft,
+        marginRight,
+        marginTop,
+      })
+    )
   }
 
-export const padding = createBoxSpacing('padding')
-export const margin = createBoxSpacing('margin')
-export const shadow = (option: BoxShadowOption) =>
-  typeof option === 'string'
-    ? css({ boxShadow: option })
-    : css({
-        boxShadow: `${option.x ?? 0}px ${option.y ?? 0}px ${option.blur ?? 0}px ${option.spread ?? 0}px ${
-          option.color ?? 0
-        }`,
-      })
+  if (
+    // padding
+    Array.isArray(padding) ||
+    Array.isArray(paddingBottom) ||
+    Array.isArray(paddingLeft) ||
+    Array.isArray(paddingRight) ||
+    Array.isArray(paddingTop) ||
+    // margin
+    Array.isArray(margin) ||
+    Array.isArray(marginBottom) ||
+    Array.isArray(marginLeft) ||
+    Array.isArray(marginRight) ||
+    Array.isArray(marginTop)
+  ) {
+    throw error.mediaQueryRequiredIn('boxSpacing')
+  }
 
-export const border = (option: BoxBorderOption) =>
-  typeof option === 'string'
-    ? css({ border: option })
-    : css({
-        borderRadius: option.radius,
-        borderStyle: option.style,
-        borderColor: option.color,
-        borderWidth: option.width,
-      })
+  if (
+    Array.isArray(height) ||
+    Array.isArray(maxHeight) ||
+    Array.isArray(maxWidth) ||
+    Array.isArray(minHeight) ||
+    Array.isArray(minWidth) ||
+    Array.isArray(width)
+  ) {
+    throw error.mediaQueryRequiredIn('size')
+  }
 
-export const size = (option: BoxSizeOption) => css(option)
+  if (
+    Array.isArray(border) ||
+    Array.isArray(borderColor) ||
+    Array.isArray(borderRadius) ||
+    Array.isArray(borderStyle) ||
+    Array.isArray(borderWidth)
+  ) {
+    throw error.mediaQueryRequiredIn('border')
+  }
 
-export const color = (option: BoxColorOption) => css(option)
+  return css(
+    css({ height, maxHeight, maxWidth, minHeight, minWidth, width }),
+    css({ border, borderColor, borderRadius, borderStyle, borderWidth }),
+    css({
+      // padding
+      padding,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      paddingTop,
+      // margin
+      margin,
+      marginBottom,
+      marginLeft,
+      marginRight,
+      marginTop,
+    })
+  )
+}
