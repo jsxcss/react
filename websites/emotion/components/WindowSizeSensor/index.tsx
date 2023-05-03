@@ -9,13 +9,11 @@ export const WindowSizeSensor = () => {
     <Box
       padding={16}
       borderRadius={8}
-      css={{
-        backgroundColor: '#ffffff20',
-        color: '#ffffff80',
-        position: 'fixed',
-        right: 16,
-        top: 16,
-      }}
+      backgroundColor="#ffffff20"
+      color="#ffffff80"
+      position="fixed"
+      right={16}
+      top={16}
     >
       {isReady && `width: ${windowSize.width}, height ${windowSize.height}`}
     </Box>

@@ -1,92 +1,90 @@
-import { PropsWithChildren, createContext, useContext, useMemo } from 'react'
-
-export type MediaQuery = { pxs?: number[]; css: ReturnType<typeof createCss> }
+import { CSSProperties, PropsWithChildren, createContext, useContext, useMemo } from 'react'
+import { SerializedStyles, css } from '@emotion/react'
 
 const MediaQueryContext = createContext<MediaQuery | undefined>(undefined)
 
 export const MediaQueryProvider = ({
   children,
   pxs = [576, 768, 992, 1200],
-}: PropsWithChildren<{ pxs: MediaQuery['pxs'] }>) => {
+}: PropsWithChildren<{ pxs?: number[] }>) => {
   const value = useMemo(() => {
-    const breakpoints = pxs.map((bp) => `@media (min-width: ${bp}px)`)
-    return { pxs, css: createCss(breakpoints) }
+    const breakpoints = pxs.map((bp) => `@media (min-width: ${bp}px)` as const)
+    return createMediaQuery(breakpoints)
   }, [...pxs])
 
   return <MediaQueryContext.Provider value={value}>{children}</MediaQueryContext.Provider>
 }
 
-export const useMediaQuery = () => {
-  const context = useContext(MediaQueryContext)
+export const useMediaQuery = (): ReturnType<typeof createMediaQuery> => {
+  const mediaQuery = useContext(MediaQueryContext)
 
-  if (context === undefined) {
+  if (mediaQuery === undefined) {
     throw new Error('MediaQueryProvider is required by the parent component')
   }
 
-  return context
+  return mediaQuery
 }
 
-const createCss = (breakpoints: string[]) => {
-  const flatten = (obj: { [x: string]: any }): any => {
-    if (typeof obj !== 'object' || obj == null) {
-      return []
+type CSSPropertiesWithMediaQuery = {
+  [key in keyof CSSProperties]: CSSProperties[key] | CSSProperties[key][]
+}
+type BreakPoint = `@media (min-width: ${number}px)`
+export type MediaQuery = (cssPropertiesWithMediaQuery: CSSPropertiesWithMediaQuery) => SerializedStyles
+
+const createMediaQuery =
+  (breakpoints: BreakPoint[]): MediaQuery =>
+  (cssPropertiesWithMediaQuery) => {
+    if (typeof cssPropertiesWithMediaQuery !== 'object' || cssPropertiesWithMediaQuery == null) {
+      return css``
     }
 
-    if (Array.isArray(obj)) {
-      return obj.map(flatten)
-    }
+    const slots: {
+      [breakpoint in BreakPoint]: { [key in keyof CSSProperties]: any }
+    } = {}
+    const objects: CSSProperties = {}
+    const properties: { [key: string]: any } = {}
+    Object.keys(cssPropertiesWithMediaQuery).forEach((asKey) => {
+      const key = asKey as keyof CSSProperties
 
-    const slots: any = {}
-    const objects: any = {}
-    const props: any = {}
-    Object.keys(obj).forEach((key) => {
-      // Check if value is an array, but skip if it looks like a selector.
-      // key.indexOf('&') === 0
+      let item = cssPropertiesWithMediaQuery[key]
+      if (!Array.isArray(item)) {
+        item = [item]
+      }
 
-      let item = obj[key]
-      if (!Array.isArray(item)) item = [item]
-
-      if (Array.isArray(item) && key.charCodeAt(0) !== 38) {
-        let prior: any
-        item.forEach((v, index) => {
-          // Optimize by removing duplicated media query entries
-          // when they are explicitly known to overlap.
-          if (prior === v) {
+      if (
+        Array.isArray(item) &&
+        key.charCodeAt(0) !== 38 // & check
+      ) {
+        let priorValue: CSSPropertiesWithMediaQuery[keyof CSSPropertiesWithMediaQuery]
+        item.forEach((currentValue, breakpointIndex) => {
+          if (priorValue === currentValue) {
             return
           }
 
-          if (v == null) {
-            // Do not create entries for undefined values as this will
-            // generate empty media media quries
+          if (currentValue == null) {
             return
           }
 
-          prior = v
-
-          if (index === 0) {
-            props[key] = v
-          } else if (slots[breakpoints[index]] === undefined) {
-            slots[breakpoints[index]] = { [key]: v }
+          priorValue = currentValue
+          const breakpoint = breakpoints[breakpointIndex]
+          if (breakpointIndex === 0) {
+            properties[key] = currentValue
+          } else if (slots[breakpoint] === undefined) {
+            slots[breakpoint] = { [key]: currentValue }
           } else {
-            slots[breakpoints[index]][key] = v
+            slots[breakpoint][key] = currentValue
           }
         })
-      } else if (typeof item === 'object') {
-        objects[key] = flatten(item)
       } else {
-        props[key] = item
+        properties[key] = item
       }
     })
 
-    // Ensure that all slots and then child objects are pushed to the end
-    breakpoints.forEach((el) => {
-      if (slots[el]) {
-        props[el] = slots[el]
+    breakpoints.forEach((breakpoint) => {
+      if (slots[breakpoint]) {
+        properties[breakpoint] = slots[breakpoint]
       }
     })
-    Object.assign(props, objects)
-    return props
+    Object.assign(properties, objects)
+    return css(properties)
   }
-
-  return (...values: any[]) => values.map(flatten)
-}

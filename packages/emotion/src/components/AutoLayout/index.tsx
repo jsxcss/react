@@ -2,110 +2,33 @@ import { ComponentPropsWithRef, ElementType, forwardRef, useMemo } from 'react'
 import { AutoLayoutComponentType, AutoLayoutOption, AutoLayoutProps, FlexOption, XAxis, YAxis } from '@jsxcss/core'
 import { Stack } from '../Stack'
 
-const createAutoLayoutComponent = (defaultAutoLayoutOption: AutoLayoutOption = {}): AutoLayoutComponentType =>
+const createAutoLayout = (defaultOption: AutoLayoutOption = {}): AutoLayoutComponentType =>
   forwardRef(function AutoLayout<T extends ElementType>(
     props: AutoLayoutProps<T>,
     ref: ComponentPropsWithRef<T>['ref']
   ) {
     const {
-      direction = defaultAutoLayoutOption.direction ?? 'vertical',
-      spacing = defaultAutoLayoutOption.spacing ?? 0,
-      spacingMode = defaultAutoLayoutOption.spacingMode ?? 'packed',
-      align = defaultAutoLayoutOption.align ?? 'top-left',
       as = 'div',
-
-      padding,
-      paddingBottom,
-      paddingLeft,
-      paddingRight,
-      paddingTop,
+      direction = defaultOption.direction ?? 'vertical',
+      spacing = defaultOption.spacing ?? 0,
+      spacingMode = defaultOption.spacingMode ?? 'packed',
+      align = defaultOption.align ?? 'top-left',
       ...rest
     } = props
 
-    const axis = useMemo((): {
-      x: XAxis
-      y: YAxis | undefined
-    } => {
-      const array = align.split('-')
-
-      if (array.length === 1) {
-        const [x] = array
-
-        return { x: x as XAxis, y: undefined }
-      }
-      const [y, x] = array
-      return { x: x as XAxis, y: y as YAxis }
-    }, [align])
-
-    const flexOption = useMemo((): Pick<FlexOption, 'align' | 'justify'> => {
-      let align: FlexOption['align']
-      let justify: FlexOption['justify']
-
-      if (direction === 'vertical') {
-        if (axis.y) {
-          if (axis.y === 'top') {
-            justify = 'start'
-          }
-          if (axis.y === 'bottom') {
-            justify = 'end'
-          }
-        } else {
-          justify = 'center'
-        }
-
-        if (axis.x === 'left') {
-          align = 'left'
-        }
-        if (axis.x === 'center') {
-          align = 'center'
-        }
-        if (axis.x === 'right') {
-          align = 'flex-end'
-        }
-      }
-      if (direction === 'horizontal') {
-        if (axis.y) {
-          if (axis.y === 'top') {
-            align = 'start'
-          }
-          if (axis.y === 'bottom') {
-            align = 'end'
-          }
-        } else {
-          align = 'center'
-        }
-
-        if (axis.x === 'left') {
-          justify = 'left'
-        }
-        if (axis.x === 'center') {
-          justify = 'center'
-        }
-        if (axis.x === 'right') {
-          justify = 'flex-end'
-        }
-      }
-
-      if (spacingMode === 'space-between') {
-        justify = 'space-between'
-      }
-
-      return { align, justify }
-    }, [axis, direction, spacingMode])
+    const flexOption = useMemo(
+      () => getFlexOptionByAutoLayoutOption({ align, direction, spacingMode }),
+      [align, direction, spacingMode]
+    )
 
     return (
       <Stack
+        as={as}
+        ref={ref}
         direction={direction}
         spacing={spacing}
         justify={flexOption.justify}
         align={flexOption.align}
-        padding={padding}
-        paddingTop={paddingTop}
-        paddingBottom={paddingBottom}
-        paddingLeft={paddingLeft}
-        paddingRight={paddingRight}
-        as={as}
-        ref={ref}
         {...rest}
       />
     )
@@ -116,6 +39,77 @@ type AutoLayoutType = AutoLayoutComponentType & {
   Horizontal: AutoLayoutComponentType
 }
 
-export const AutoLayout = createAutoLayoutComponent() as AutoLayoutType
-AutoLayout.Vertical = createAutoLayoutComponent({ direction: 'vertical' })
-AutoLayout.Horizontal = createAutoLayoutComponent({ direction: 'horizontal' })
+export const AutoLayout = createAutoLayout() as AutoLayoutType
+AutoLayout.Vertical = createAutoLayout({ direction: 'vertical' })
+AutoLayout.Horizontal = createAutoLayout({ direction: 'horizontal' })
+
+const getFlexOptionByAutoLayoutOption = (
+  autoLayoutOption: Required<Pick<AutoLayoutOption, 'align' | 'direction' | 'spacingMode'>>
+): Pick<FlexOption, 'align' | 'justify'> => {
+  const array = autoLayoutOption.align.split('-')
+  let axis: {
+    x: XAxis
+    y: YAxis | undefined
+  } = { x: 'left', y: undefined }
+  if (array.length === 1) {
+    const [x] = array
+
+    axis.x = x as XAxis
+  }
+  const [y, x] = array as [YAxis, XAxis]
+  axis = { x, y }
+
+  let align: FlexOption['align']
+  let justify: FlexOption['justify']
+
+  if (autoLayoutOption.direction === 'vertical') {
+    if (axis.y) {
+      if (axis.y === 'top') {
+        justify = 'start'
+      }
+      if (axis.y === 'bottom') {
+        justify = 'end'
+      }
+    } else {
+      justify = 'center'
+    }
+
+    if (axis.x === 'left') {
+      align = 'left'
+    }
+    if (axis.x === 'center') {
+      align = 'center'
+    }
+    if (axis.x === 'right') {
+      align = 'flex-end'
+    }
+  }
+  if (autoLayoutOption.direction === 'horizontal') {
+    if (axis.y) {
+      if (axis.y === 'top') {
+        align = 'start'
+      }
+      if (axis.y === 'bottom') {
+        align = 'end'
+      }
+    } else {
+      align = 'center'
+    }
+
+    if (axis.x === 'left') {
+      justify = 'left'
+    }
+    if (axis.x === 'center') {
+      justify = 'center'
+    }
+    if (axis.x === 'right') {
+      justify = 'flex-end'
+    }
+  }
+
+  if (autoLayoutOption.spacingMode === 'space-between') {
+    justify = 'space-between'
+  }
+
+  return { align, justify }
+}

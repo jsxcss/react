@@ -1,4 +1,3 @@
-import { css } from '@emotion/react'
 import { Box } from '@jsxcss/emotion'
 import { motion } from 'framer-motion'
 
@@ -18,11 +17,9 @@ export const Spinner = () => (
       borderColor="white"
       borderRadius="50%"
       borderStyle="solid"
-      css={css`
-        border-top: none;
-        border-right: none;
-        margin: 8px auto;
-      `}
+      borderTop="none"
+      borderRight="none"
+      margin="8px auto"
     />
   </motion.div>
 )

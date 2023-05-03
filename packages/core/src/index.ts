@@ -10,15 +10,5 @@ export type {
   StackComponentType,
   StackProps,
 } from './components'
-export type {
-  AutoLayoutOption,
-  BoxOption,
-  BoxSizeOption,
-  BoxColorOption,
-  FlexOption,
-  GutterOption,
-  StackOption,
-  XAxis,
-  YAxis,
-} from './utils'
+export type { AutoLayoutOption, BoxOption, FlexOption, GutterOption, StackOption, XAxis, YAxis } from './utils'
 export type { OptionWithMediaQuery } from './contexts'

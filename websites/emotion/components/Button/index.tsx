@@ -1,4 +1,3 @@
-import { css } from '@emotion/react'
 import { Flex, Stack } from '@jsxcss/emotion'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ComponentPropsWithoutRef, forwardRef, PropsWithChildren } from 'react'
@@ -16,22 +15,22 @@ export const Button = forwardRef<
     direction="horizontal"
     as={motion.button}
     ref={ref}
-    whileTap={{ scale: 0.92, backgroundColor: 'rgb(46, 0, 90)' }}
-    whileHover={{ scale: 0.98, opacity: 0.86 }}
+    whileTap={{ scale: 0.96, opacity: 0.8 }}
+    whileHover={{ scale: 0.98, opacity: 0.9 }}
     borderRadius={12}
     borderStyle="none"
-    padding={16}
-    css={css`
-      background-color: blueviolet;
-      cursor: pointer;
-      position: relative;
-      flex: 1;
-    `}
+    padding={[16, 18, 20]}
+    backgroundColor={['#007bff', '#007bff', '#007bff']}
+    cursor="pointer"
+    position="relative"
+    flex={1}
     {...rest}
   >
-    <Flex.Center css={{ position: 'absolute', top: 0, left: 20, bottom: 0 }}>
+    <Flex.Center position="absolute" top={0} left={20} bottom={0}>
       <AnimatePresence>{loading && <Spinner />}</AnimatePresence>
     </Flex.Center>
-    <Flex.Center css={{ flex: 1, fontSize: 16, color: 'white' }}>{children}</Flex.Center>
+    <Flex.Center flex={1} fontSize={[16, 18, 20]} color="white" fontWeight="bold">
+      {children}
+    </Flex.Center>
   </Stack>
 ))

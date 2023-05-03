@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 
-export type FlexOption = {
+export interface FlexOption {
   align?: CSSProperties['alignItems']
   justify?: CSSProperties['justifyContent']
   direction?: CSSProperties['flexDirection']

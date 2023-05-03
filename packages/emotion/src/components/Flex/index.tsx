@@ -1,82 +1,23 @@
 import type { ComponentPropsWithRef, ElementType } from 'react'
 import { forwardRef } from 'react'
-import { css } from '@emotion/react'
 import { FlexComponentType, FlexOption, FlexProps } from '@jsxcss/core'
 import { useMediaQuery } from '../../contexts'
-import * as utils from '../../utils'
-import { box } from '../../utils'
+import { flex } from '../../utils'
 import { Box } from '../Box'
 
-const createFlexComponent = (flexOption: FlexOption = {}): FlexComponentType =>
+const createFlex = (defaultOption: FlexOption = {}): FlexComponentType =>
   forwardRef(function Flex<T extends ElementType>(props: FlexProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
     const mediaQuery = useMediaQuery()
 
     const {
       as = 'div',
-      direction = flexOption.direction,
-      justify = flexOption.justify,
-      align = flexOption.align,
-
-      border,
-      borderColor,
-      borderRadius,
-      borderStyle,
-      borderWidth,
-      height,
-      margin,
-      marginBottom,
-      marginLeft,
-      marginRight,
-      marginTop,
-      maxHeight,
-      maxWidth,
-      minHeight,
-      minWidth,
-      padding,
-      paddingBottom,
-      paddingLeft,
-      paddingRight,
-      paddingTop,
-      width,
+      direction = defaultOption.direction,
+      justify = defaultOption.justify,
+      align = defaultOption.align,
       ...rest
     } = props
 
-    return (
-      <Box
-        as={as}
-        ref={ref}
-        css={css(
-          utils.flex({ direction, align, justify }, mediaQuery),
-          box(
-            {
-              border,
-              borderColor,
-              borderRadius,
-              borderStyle,
-              borderWidth,
-              height,
-              margin,
-              marginBottom,
-              marginLeft,
-              marginRight,
-              marginTop,
-              maxHeight,
-              maxWidth,
-              minHeight,
-              minWidth,
-              padding,
-              paddingBottom,
-              paddingLeft,
-              paddingRight,
-              paddingTop,
-              width,
-            },
-            mediaQuery
-          )
-        )}
-        {...rest}
-      />
-    )
+    return <Box as={as} ref={ref} css={flex({ direction, align, justify }, mediaQuery)} {...rest} />
   })
 
 type FlexType = FlexComponentType & {
@@ -85,7 +26,7 @@ type FlexType = FlexComponentType & {
   CenterHorizontal: FlexComponentType
 }
 
-export const Flex = createFlexComponent() as FlexType
-Flex.Center = createFlexComponent({ align: 'center', justify: 'center' })
-Flex.CenterVertical = createFlexComponent({ align: 'center' })
-Flex.CenterHorizontal = createFlexComponent({ justify: 'center' })
+export const Flex = createFlex() as FlexType
+Flex.Center = createFlex({ align: 'center', justify: 'center' })
+Flex.CenterVertical = createFlex({ align: 'center' })
+Flex.CenterHorizontal = createFlex({ justify: 'center' })

@@ -7,14 +7,14 @@ export const flex = (
   mediaQuery?: MediaQuery
 ) => {
   if (mediaQuery) {
-    const mediaQueried = mediaQuery.css({
-      display: 'flex',
-      flexDirection: direction,
-      alignItems: align,
-      justifyContent: justify,
-    })
-
-    return css(...mediaQueried)
+    return css(
+      mediaQuery({
+        display: 'flex',
+        flexDirection: direction,
+        alignItems: align,
+        justifyContent: justify,
+      })
+    )
   }
 
   if (Array.isArray(direction) || Array.isArray(justify) || Array.isArray(align)) {
