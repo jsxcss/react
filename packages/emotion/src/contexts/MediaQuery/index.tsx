@@ -1,7 +1,7 @@
 import { CSSProperties, PropsWithChildren, createContext, useContext, useMemo } from 'react'
 import { SerializedStyles, css } from '@emotion/react'
 
-const MediaQueryContext = createContext<MediaQuery | undefined>(undefined)
+export const MediaQueryContext = createContext<MediaQuery | undefined>(undefined)
 
 export const MediaQueryProvider = ({
   children,

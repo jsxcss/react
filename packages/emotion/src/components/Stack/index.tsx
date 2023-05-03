@@ -1,14 +1,13 @@
-import type { ComponentPropsWithRef, ElementType } from 'react'
-import { forwardRef } from 'react'
+import { ComponentPropsWithRef, ElementType, forwardRef, useContext } from 'react'
 import { css } from '@emotion/react'
 import { AxisDirection, StackComponentType, StackOption, StackProps } from '@jsxcss/core'
-import { useMediaQuery } from '../../contexts'
+import { MediaQueryContext } from '../../contexts'
 import { flex, gutter } from '../../utils'
 import { Box } from '../Box'
 
 const createStack = (defaultOption: StackOption = {}): StackComponentType =>
   forwardRef(function Stack<T extends ElementType>(props: StackProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
-    const mediaQuery = useMediaQuery()
+    const mediaQuery = useContext(MediaQueryContext)
 
     const {
       as = 'div',
