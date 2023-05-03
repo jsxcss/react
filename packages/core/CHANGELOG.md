@@ -1,5 +1,11 @@
 # @jsxcss/core
 
+## 1.3.1
+
+### Patch Changes
+
+- 233932a: fix(emotion): if don't use array as property of jsxcss, no need MediaQueryProvider in parent from now
+
 ## 1.3.0
 
 ### Minor Changes
