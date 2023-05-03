@@ -1,5 +1,11 @@
 # @jsxcss/core
 
+## 1.3.0
+
+### Minor Changes
+
+- 29e6952: feat(emotion): all props can accept array to make responsive view
+
 ## 1.2.0
 
 ### Minor Changes
