@@ -1,5 +1,11 @@
 # @jsxcss/core
 
+## 1.3.2
+
+### Patch Changes
+
+- f3c7f91: chore: change directories, initialize documentation
+
 ## 1.3.1
 
 ### Patch Changes
