@@ -10,16 +10,24 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: <Translate>item 1 Title</Translate>,
-    description: <Translate>item 1</Translate>,
+    title: <Translate>Polymorphic as prop</Translate>,
+    description: (
+      <Translate>
+        TypeSafe as prop to use semantic tag, or Easy integration with framer-motion, react-spring, etc.
+      </Translate>
+    ),
   },
   {
-    title: <Translate>item 2 Title</Translate>,
-    description: <Translate>item 2</Translate>,
+    title: <Translate>Responsive css prop</Translate>,
+    description: (
+      <Translate>Support responsive uis easily by using responsive css prop or useMediaQuery in SSR, CSR</Translate>
+    ),
   },
   {
-    title: <Translate>item 3 Title</Translate>,
-    description: <Translate>item 3</Translate>,
+    title: <Translate>Declarative layout components</Translate>,
+    description: (
+      <Translate>Box, Flex, Stack is ready to build complex layout of user-interface declaratively.</Translate>
+    ),
   },
 ]
 

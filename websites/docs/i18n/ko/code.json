@@ -1,27 +1,27 @@
 {
-  "sub title": {
-    "message": "sub title"
+  "CSS components in JSX easily": {
+    "message": "JSX에서 CSS를 쉽게"
   },
   "Get started": {
-    "message": "Get started"
+    "message": "시작하기"
   },
-  "item 1 Title": {
-    "message": "item 1 Title"
+  "Polymorphic as prop": {
+    "message": "다형적인 as prop"
   },
-  "item 1": {
-    "message": "item 1"
+  "TypeSafe as prop to use semantic tag, or Easy integration with framer-motion, react-spring, etc.": {
+    "message": "타입적으로 안전하게 semantic tag를 사용거나 framer-motion, react-spring 등과 쉬운 통합을 제공합니다."
   },
-  "item 2 Title": {
-    "message": "item 2 Title"
+  "Responsive css prop": {
+    "message": "반응형 css prop"
   },
-  "item 2": {
-    "message": "item 2"
+  "Support responsive uis easily by using responsive css prop or useMediaQuery in SSR, CSR": {
+    "message": "반응형 css prop 혹은 useMediaQuery를 활용해 SSR, CSR에서 쉽게 반응형 유저 인터페이스를 지원하세요."
   },
-  "item 3 Title": {
-    "message": "item 3 Title"
+  "Declarative layout components": {
+    "message": "선언적 레이아웃 컴포넌트"
   },
-  "item 3": {
-    "message": "item 3"
+  "Box, Flex, Stack is ready to build complex layout of user-interface declaratively.": {
+    "message": "Box, Flex, Stack가 준비되어 있습니다. 유저 인터페이스의 복잡한 레이아웃을 선언적으로 구성하세요."
   },
   "theme.ErrorPageContent.title": {
     "message": "페이지에 오류가 발생하였습니다.",
@@ -155,6 +155,9 @@
     "message": "{nDocsTagged} \"{tagName}\" 태그에 분류되었습니다",
     "description": "The title of the page for a docs tag"
   },
+  "theme.docs.versionBadge.label": {
+    "message": "버전: {versionLabel}"
+  },
   "theme.docs.versions.unreleasedVersionLabel": {
     "message": "{siteTitle} {versionLabel} 문서는 아직 정식 공개되지 않았습니다.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
@@ -170,9 +173,6 @@
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "최신 버전",
     "description": "The label used for the latest version suggestion link label"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "버전: {versionLabel}"
   },
   "theme.common.editThisPage": {
     "message": "페이지 편집",
@@ -230,13 +230,17 @@
     "message": "접을 수 있는 사이드바 분류 '{label}' 접기(펼치기)",
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "이 페이지에서",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "언어",
     "description": "The label for the mobile language switcher dropdown"
   },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "이 페이지에서",
-    "description": "The label used by the button on the collapsible TOC component"
+  "theme.blog.post.readingTime.plurals": {
+    "message": "약 {readingTime}분",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
     "message": "자세히 보기",
@@ -245,10 +249,6 @@
   "theme.blog.post.readMoreLabel": {
     "message": "{title} 에 대해 더 읽어보기",
     "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "약 {readingTime}분",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "사이드바 숨기기",
@@ -285,8 +285,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "태그",
     "description": "The title of the tag list page"
-  },
-  "CSS components in JSX easily": {
-    "message": "CSS components in JSX easily"
   }
 }

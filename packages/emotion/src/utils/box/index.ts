@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { BoxOption, OptionWithMediaQuery, error } from '@jsxcss/core'
-import { MediaQuery } from '../../contexts'
+import { MediaQuery } from '../../responsive'
 
 const values = <T extends object>(obj: T) => Object.values(obj) as T[keyof T][]
 

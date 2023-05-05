@@ -1,3 +1,3 @@
-export { Box, Flex, Stack } from './components'
+export { Box, Flex, Stack } from './layout-components'
 
-export { MediaQueryProvider, useMediaQuery } from './contexts'
+export { MediaQueryProvider, useMediaQuery } from './responsive'

@@ -3,24 +3,28 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.@jsxcss/core": {
-    "message": "@jsxcss/core",
-    "description": "The label for category @jsxcss/core in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Why jsxcss?": {
+    "message": "왜 jsxcss일까?",
+    "description": "The label for category Why jsxcss? in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.@jsxcss/emotion": {
     "message": "@jsxcss/emotion",
     "description": "The label for category @jsxcss/emotion in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Introduction": {
-    "message": "Introduction",
-    "description": "The label for category Introduction in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.APIs": {
+    "message": "APIs",
+    "description": "The label for category APIs in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.core": {
-    "message": "core",
-    "description": "The label for category core in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Layout components": {
+    "message": "레이아웃 컴포넌트",
+    "description": "The label for category Layout components in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.emotion": {
-    "message": "emotion",
-    "description": "The label for category emotion in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Polymorphic as prop": {
+    "message": "다형적인 as prop",
+    "description": "The label for category Polymorphic as prop in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Responsive css prop": {
+    "message": "반응형 css prop",
+    "description": "The label for category Responsive css prop in sidebar tutorialSidebar"
   }
 }

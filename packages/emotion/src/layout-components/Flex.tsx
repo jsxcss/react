@@ -1,8 +1,8 @@
 import { ComponentPropsWithRef, ElementType, forwardRef, useContext } from 'react'
 import { FlexComponentType, FlexOption, FlexProps } from '@jsxcss/core'
-import { MediaQueryContext } from '../../contexts'
-import { flex } from '../../utils'
-import { Box } from '../Box'
+import { Box } from './Box'
+import { MediaQueryContext } from '../responsive'
+import { flex } from '../utils'
 
 const createFlex = (defaultOption: FlexOption = {}): FlexComponentType =>
   forwardRef(function Flex<T extends ElementType>(props: FlexProps<T>, ref: ComponentPropsWithRef<T>['ref']) {

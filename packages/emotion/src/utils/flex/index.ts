@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { FlexOption, OptionWithMediaQuery, error } from '@jsxcss/core'
-import { MediaQuery } from '../../contexts'
+import { MediaQuery } from '../../responsive'
 
 export const flex = (
   { direction = 'row', justify = 'flex-start', align = 'stretch' }: OptionWithMediaQuery<FlexOption>,

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import { GutterOption, OptionWithMediaQuery } from '@jsxcss/core'
-import { MediaQuery } from '../../contexts'
+import { MediaQuery } from '../../responsive'
 
 export const gutter = ({ spacing = 24 }: OptionWithMediaQuery<GutterOption>, mediaQuery?: MediaQuery) => {
   if (mediaQuery) {

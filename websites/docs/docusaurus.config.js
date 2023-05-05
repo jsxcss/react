@@ -107,10 +107,6 @@ const config = {
                 to: '/docs/intro/motivation.i18n',
               },
               {
-                label: 'Installation',
-                to: '/docs/intro/installation.i18n',
-              },
-              {
                 label: 'Example of @jsxcss/emotion',
                 href: 'https://emotion.jsxcss.org',
               },
@@ -131,10 +127,6 @@ const config = {
               {
                 label: '@jsxcss/emotion',
                 href: 'https://www.npmjs.com/package/@jsxcss/emotion',
-              },
-              {
-                label: '@jsxcss/core',
-                href: 'https://www.npmjs.com/package/@jsxcss/core',
               },
             ],
           },

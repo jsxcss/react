@@ -1,7 +1,7 @@
 import { ComponentPropsWithRef, ElementType, forwardRef, useContext } from 'react'
 import { BoxComponentType, BoxProps } from '@jsxcss/core'
-import { MediaQueryContext } from '../../contexts'
-import { box } from '../../utils'
+import { MediaQueryContext } from '../responsive'
+import { box } from '../utils'
 
 const createBox = (): BoxComponentType =>
   forwardRef(function Box<T extends ElementType>(props: BoxProps<T>, ref: ComponentPropsWithRef<T>['ref']) {
