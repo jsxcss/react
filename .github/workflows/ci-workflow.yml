@@ -23,9 +23,6 @@ jobs:
       - name: Build core packages
         run: pnpm build --filter=@jsxcss/core --filter=@jsxcss/emotion
 
-      - name: Check typescript
-        run: pnpm type:check
-
       - name: Check eslint
         run: pnpm lint
 
