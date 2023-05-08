@@ -6,15 +6,16 @@ const ComponentPage = () => (
     <Flex.Center
       as="section"
       minHeight={100}
-      minWidth={[undefined, undefined, 400]}
+      width={[undefined, undefined, 400]}
       margin={[16]}
       borderRadius={16}
       fontSize={[16, 30, 30]}
       fontWeight={['bold', 500, 500]}
       color="black"
       backgroundColor="lightgray"
+      padding={16}
     >
-      @jsxcss/emotion
+      CSS components in JSX easily
     </Flex.Center>
     <Stack.Vertical spacing={0} flex={1}>
       <Stack direction={['vertical', 'horizontal']} justify="space-between" spacing={[16, 8]} margin={[16]}>

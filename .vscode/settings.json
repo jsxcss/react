@@ -4,5 +4,6 @@
   "eslint.packageManager": "pnpm",
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.allowedSchemas": ["jsxcss"]
 }
