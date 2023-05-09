@@ -8,6 +8,9 @@ jobs:
   quality:
     name: Check quality
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        command: ['pnpm build --filter=@jsxcss/core --filter=@jsxcss/emotion', 'pnpm lint', 'pnpm test']
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -20,11 +23,5 @@ jobs:
           node-version-file: '.nvmrc'
       - run: pnpm install --frozen-lockfile
 
-      - name: Build core packages
-        run: pnpm build --filter=@jsxcss/core --filter=@jsxcss/emotion
-
-      - name: Check eslint
-        run: pnpm lint
-
-      - name: Test by jest
-        run: pnpm test
+      - name: Run commands - Build core packages, Check eslint, Test by jest
+        run: ${{ matrix.command }}
