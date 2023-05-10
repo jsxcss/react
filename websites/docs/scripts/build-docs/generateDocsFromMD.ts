@@ -1,27 +1,7 @@
+import path from 'path'
 import fse from 'fs-extra'
 import globby from 'globby'
-import path from 'path'
 import { DOCUSAURUS_ROOT, PACKAGES_ROOT } from './constants'
-
-const EN_OUTDIR = path.resolve(DOCUSAURUS_ROOT, 'docs')
-const KO_OUTDIR = path.resolve(DOCUSAURUS_ROOT, 'i18n/ko/docusaurus-plugin-content-docs/current')
-
-const excludes = ['**/*.en.md', '**/*.ko.md', '**/README.md', '**/CHANGELOG.md', '**/node_modules']
-export async function generateDocsFromMD() {
-  return await Promise.all([
-    copyMDDocs(PACKAGES_ROOT, EN_OUTDIR, excludes),
-    copyMDDocs(path.join(DOCUSAURUS_ROOT, 'intro'), path.join(EN_OUTDIR, 'intro'), excludes),
-
-    generateLanguageDocs(PACKAGES_ROOT, 'en', EN_OUTDIR),
-    generateLanguageDocs(PACKAGES_ROOT, 'ko', KO_OUTDIR),
-
-    generateLanguageDocs(path.join(DOCUSAURUS_ROOT, 'intro'), 'en', path.join(EN_OUTDIR, 'intro')),
-    generateLanguageDocs(path.join(DOCUSAURUS_ROOT, 'intro'), 'ko', path.join(KO_OUTDIR, 'intro')),
-
-    generateDefaultREADMEDocs(EN_OUTDIR),
-    generateI18nREADMEDocs('ko', KO_OUTDIR),
-  ])
-}
 
 async function copyMDDocs(cwd: string, outdir: string, excludes: string[]) {
   const filepaths = await globby([`**/*.md`, '**/*_category_.json'], {
@@ -93,4 +73,24 @@ async function generateI18nREADMEDocs(lang: string, outdir: string) {
       await fse.copy(source, destination)
     })
   )
+}
+
+const EN_OUTDIR = path.resolve(DOCUSAURUS_ROOT, 'docs')
+const KO_OUTDIR = path.resolve(DOCUSAURUS_ROOT, 'i18n/ko/docusaurus-plugin-content-docs/current')
+
+const excludes = ['**/*.en.md', '**/*.ko.md', '**/README.md', '**/CHANGELOG.md', '**/node_modules']
+export default async function generateDocsFromMD() {
+  return Promise.all([
+    copyMDDocs(PACKAGES_ROOT, EN_OUTDIR, excludes),
+    copyMDDocs(path.join(DOCUSAURUS_ROOT, 'intro'), path.join(EN_OUTDIR, 'intro'), excludes),
+
+    generateLanguageDocs(PACKAGES_ROOT, 'en', EN_OUTDIR),
+    generateLanguageDocs(PACKAGES_ROOT, 'ko', KO_OUTDIR),
+
+    generateLanguageDocs(path.join(DOCUSAURUS_ROOT, 'intro'), 'en', path.join(EN_OUTDIR, 'intro')),
+    generateLanguageDocs(path.join(DOCUSAURUS_ROOT, 'intro'), 'ko', path.join(KO_OUTDIR, 'intro')),
+
+    generateDefaultREADMEDocs(EN_OUTDIR),
+    generateI18nREADMEDocs('ko', KO_OUTDIR),
+  ])
 }

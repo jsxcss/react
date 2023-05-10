@@ -25,6 +25,7 @@ module.exports = {
       },
     ],
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
+    'import/no-extraneous-dependencies': ['off'],
   },
   ignorePatterns: ['**/*.js', '**/*.json', 'node_modules', 'public', 'styles', '.next', 'coverage', 'dist', '.turbo'],
 }

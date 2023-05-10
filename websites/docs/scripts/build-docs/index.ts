@@ -1,4 +1,4 @@
-import { generateDocsFromMD } from './generate-docs-from-md'
+import generateDocsFromMD from './generateDocsFromMD'
 
 async function main() {
   console.log(':::::::::::  build-docs running...  :::::::::::')

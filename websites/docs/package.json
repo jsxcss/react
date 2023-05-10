@@ -9,6 +9,7 @@
     "dev:ko": "pnpm gen:i18n && docusaurus start --locale ko",
     "docusaurus": "docusaurus",
     "gen:i18n": "pnpm clear && pnpm ts-node -T ./scripts/build-docs/index.ts && pnpm write-translations",
+    "lint": "eslint .",
     "serve": "docusaurus serve",
     "swizzle": "docusaurus swizzle",
     "typecheck": "tsc",
