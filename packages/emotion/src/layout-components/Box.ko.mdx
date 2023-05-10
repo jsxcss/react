@@ -2,3 +2,113 @@
 sidebar_position: 1
 title: Box
 ---
+
+### 가장 기본이 되는 컴포넌트
+
+JSXCSS의 모든 레이아웃 컴포넌트([Flex](/docs/emotion/src/layout-components/Flex.i18n), [Stack](/docs/emotion/src/layout-components/Stack.i18n))는 Box를 확장합니다.
+때문에 먼저 Box를 알아야 다른 레이아웃 컴포넌트를 잘 사용할 수 있습니다.
+
+## 1. css prop
+
+JSXCSS는 jsx내에서 css prop를 직접 쓸 수 있게 합니다.
+따라서 불필요하게 @emotion/react의 css를 import하지 않아도 됩니다.
+
+### 간결한 스타일 코드
+
+이를 통해 코드라인 수을 최소화하고 가독성을 높일 수 있게 합니다.
+
+```tsx
+// verbose
+import { css } from '@emotion/react'
+
+const Verbose = () => (
+  <div
+    css={css`
+      width: 18px;
+    `}
+  />
+)
+
+// concise
+import { Box } from '@jsxcss/emotion'
+
+const Concise = () => <Box width={18} />
+```
+
+### 쉬운 반응형
+
+아래 예시에서 보다시피 이전 css 방식에서는 미디어 쿼리를 쓰기 위해 장황한 코드를 작성해야만 합니다.
+또 대부분의 컴포넌트에서 같은 breakpoint를 갖음에도 매번 몇 px에서 스타일이 분기되는 지 작성해야만 했습니다.
+
+반면 JSXCSS의 responsive css prop을 사용하면 개발자가 단지 해당 breakpoint의 index에 해당 속성을 추가하기만 하면 됩니다.
+따라서 코드가 훨씬 간결하고 유지보수를 더 쉽게 할 수 있습니다.
+
+> 이 기능을 사용하려면 해당 breakpoint의 px을 갖기 위해 JSXCSS의 [MediaQueryProvider](/docs/emotion/src/responsive/MediaQueryProvider.i18n)를 부모에 배치해야 합니다.
+
+```tsx
+// verbose
+import { css } from '@emotion/react'
+
+const Verbose = () => (
+  <div
+    css={css`
+      width: 18px;
+      background-color: red;
+
+      @media (min-width: 768px) {
+        font-size: 24px;
+        background-color: orange;
+      }
+      @media (min-width: 1440px) {
+        font-size: 36px;
+        background-color: green;
+      }
+    `}
+  />
+)
+
+// concise
+import { Box } from '@jsxcss/emotion'
+
+const Concise = () => (
+  <Box
+    width={[18, 24, 36]} // breakpoints was provided in parent component, MediaQueryProvider
+    backgroundColor={['red', 'orange', 'green']}
+  />
+)
+```
+
+## 2. as prop
+
+Box는 기본적으로 div로 반환합니다.
+
+### 접근성 지원
+
+하지만 원한다면 언제든지 다른 ReactElement로 변환할 수 있습니다.
+
+```tsx
+// Accessible
+const Correct = () => <Box as="section" />
+```
+
+### 타입 안정성
+
+자유롭게 태그를 변경하면서도 타입적으로도 안정성을 보장받을 수 있습니다.
+
+```tsx
+// Wrong
+const Wrong = () => (
+  <Box
+    as="div"
+    href="https://example.com" // type error occured! because of as prop, div tag have no href prop
+  />
+)
+
+// Correct
+const Correct = () => (
+  <Box
+    as="a"
+    href="https://example.com" // Good, because of as prop, a tag
+  />
+)
+```
