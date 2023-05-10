@@ -20,5 +20,6 @@ export const Navigation = () => (
 
     <Link href="/mediaQuery">/mediaQuery</Link>
     <Link href="/react-spring">/react-spring</Link>
+    <Link href="/compare">/compare</Link>
   </Stack>
 )
