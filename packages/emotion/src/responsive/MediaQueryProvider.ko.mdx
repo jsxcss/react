@@ -2,3 +2,51 @@
 sidebar_position: 1
 title: MediaQueryProvider
 ---
+
+### 반응형 UI를 쉽게 구현하기 위해 간단한 설정이 필요합니다
+
+MediaQueryProvider가 부모 컴포넌트에 있어야 [Responsive css prop](/docs/emotion/src/layout-components/Box.i18n#1-css-prop), [useMediaQuery](/docs/emotion/src/responsive/useMediaQuery.i18n)을 사용할 수 있습니다. 이제 반응형 UI를 아주 쉽게 만드실 수 있습니다.
+
+```tsx
+const App = () => {
+  const mediaQuery = useMediaQuery()
+
+  return (
+    <>
+      <div
+        css={mediaQuery({
+          width: [12, 24, 36], // This will throw Error because of no MediaQueryProvider in parent
+        })}
+      />
+      <Box
+        width={12} // Valid, if you don't use array to use responsive css prop
+      />
+      <Box
+        width={[12, 24, 36]} // This will throw Error because of no MediaQueryProvider in parent
+      />
+
+      <MediaQueryProvider>
+        <Box
+          width={[12, 24, 36]} // Valid
+        />
+        <Box
+          width={12} // Valid
+        />
+        <UseMediaQuery />
+      </MediaQueryProvider>
+    </>
+  )
+}
+
+const UseMediaQuery = () => {
+  const mediaQuery = useMediaQuery()
+
+  return (
+    <div
+      css={mediaQuery({
+        width: [12, 24, 36], // Valid
+      })}
+    />
+  )
+}
+```
