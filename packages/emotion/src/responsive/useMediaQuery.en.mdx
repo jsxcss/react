@@ -2,3 +2,24 @@
 sidebar_position: 2
 title: useMediaQuery
 ---
+
+### Without layout components, responsive UI easily
+
+We provide useMediaQuery to easily create responsive UI without using responsive css props of layout components.
+
+> This hook must have a [MediaQueryProvider](/docs/emotion/src/responsive/MediaQueryProvider.i18n) in the parent component.
+
+```tsx
+const ChildOfMediaQueryProvider = () => {
+  const mediaQuery = useMediaQuery() // If no MediaQueryProvider in parent, It will throw error
+
+  return (
+    <div
+      css={mediaQuery({
+        height: 12, // valid
+        width: [12, 24, 36], // valid
+      })}
+    />
+  )
+}
+```

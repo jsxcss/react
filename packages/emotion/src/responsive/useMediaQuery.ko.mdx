@@ -2,3 +2,24 @@
 sidebar_position: 2
 title: useMediaQuery
 ---
+
+### 레이아웃 컴포넌트가 없어도 반응형 UI를 쉽게
+
+레이아웃 컴포넌트의 반응형 css prop을 사용하지 않아도 반응형 UI를 쉽게 만들 수 있는 useMediaQuery를 제공합니다.
+
+> 이 훅은 반드시 부모 컴포넌트에 [MediaQueryProvider](/docs/emotion/src/responsive/MediaQueryProvider.i18n)가 있어야 합니다.
+
+```tsx
+const ChildOfMediaQueryProvider = () => {
+  const mediaQuery = useMediaQuery() // If no MediaQueryProvider in parent, It will throw error
+
+  return (
+    <div
+      css={mediaQuery({
+        height: 12, // valid
+        width: [12, 24, 36], // valid
+      })}
+    />
+  )
+}
+```
