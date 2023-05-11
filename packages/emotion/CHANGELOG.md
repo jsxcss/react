@@ -1,5 +1,12 @@
 # @jsxcss/emotion
 
+## 1.3.3
+
+### Patch Changes
+
+- 7b24db5: fix(emotion): default spacing 24px to 0px
+  - @jsxcss/core@1.3.3
+
 ## 1.3.2
 
 ### Patch Changes

@@ -4,6 +4,13 @@
 
 ### Patch Changes
 
+- Updated dependencies [7b24db5]
+  - @jsxcss/emotion@1.3.3
+
+## null
+
+### Patch Changes
+
 - Updated dependencies [f3c7f91]
   - @jsxcss/emotion@1.3.2
 
