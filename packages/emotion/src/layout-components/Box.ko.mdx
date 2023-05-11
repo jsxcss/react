@@ -11,7 +11,6 @@ JSXCSS의 모든 레이아웃 컴포넌트([Flex](/docs/emotion/src/layout-compo
 ## 1. css prop
 
 JSXCSS는 jsx내에서 css prop를 직접 쓸 수 있게 합니다.
-따라서 불필요하게 @emotion/react의 css를 import하지 않아도 됩니다.
 
 ### 간결한 스타일 코드
 
@@ -35,7 +34,7 @@ import { Box } from '@jsxcss/emotion'
 const Concise = () => <Box width={18} />
 ```
 
-### 쉬운 반응형
+### 쉬운 반응형 UI 구현
 
 아래 예시에서 보다시피 이전 css 방식에서는 미디어 쿼리를 쓰기 위해 장황한 코드를 작성해야만 합니다.
 또 대부분의 컴포넌트에서 같은 breakpoint를 갖음에도 매번 몇 px에서 스타일이 분기되는 지 작성해야만 했습니다.

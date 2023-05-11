@@ -2,3 +2,112 @@
 sidebar_position: 1
 title: Box
 ---
+
+### The most basic component
+
+JSXCSS's All layout components ([Flex](/docs/emotion/src/layout-components/Flex.i18n), [Stack](/docs/emotion/src/layout-components/Stack.i18n)) extend Box.
+Therefore, you need to know Box first to use other layout components well.
+
+## 1. css prop
+
+JSXCSS allows direct use of css props within jsx.
+
+### concise style code
+
+This minimizes the number of lines of code and increases readability.
+
+```tsx
+// verbose
+import { css } from '@emotion/react'
+
+const Verbose = () => (
+  <div
+    css={css`
+      width: 18px;
+    `}
+  />
+)
+
+// concise
+import { Box } from '@jsxcss/emotion'
+
+const Concise = () => <Box width={18} />
+```
+
+### Easy Responsive UI implementation
+
+As you can see in the example below, the previous css approach requires you to write verbose code to write media queries.
+Also, even though most components have the same breakpoint, you had to write how many px the style diverged each time.
+
+On the other hand, with JSXCSS's responsive css prop, developers simply add that property to the breakpoint's index.
+This makes your code much more concise and easier to maintain.
+
+> To use this feature, you need to parent the [MediaQueryProvider](/docs/emotion/src/responsive/MediaQueryProvider.i18n) of JSXCSS to have the px of that breakpoint.
+
+```tsx
+// verbose
+import { css } from '@emotion/react'
+
+const Verbose = () => (
+  <div
+    css={css`
+      width: 18px;
+      background-color: red;
+
+      @media (min-width: 768px) {
+        font-size: 24px;
+        background-color: orange;
+      }
+      @media (min-width: 1440px) {
+        font-size: 36px;
+        background-color: green;
+      }
+    `}
+  />
+)
+
+// concise
+import { Box } from '@jsxcss/emotion'
+
+const Concise = () => (
+  <Box
+    width={[18, 24, 36]} // breakpoints was provided in parent component, MediaQueryProvider
+    backgroundColor={['red', 'orange', 'green']}
+  />
+)
+```
+
+## 2. as prop
+
+Box returns as a div by default.
+
+### Accessibility support
+
+However, you can always convert it to another ReactElement if you wish.
+
+```tsx
+// Accessible
+const Correct = () => <Box as="section" />
+```
+
+### Type safety
+
+You can freely change the tag while also being guaranteed stability in terms of type.
+
+```tsx
+// Wrong
+const Wrong = () => (
+  <Box
+    as="div"
+    href="https://example.com" // type error occured! because of as prop, div tag have no href prop
+  />
+)
+
+// Correct
+const Correct = () => (
+  <Box
+    as="a"
+    href="https://example.com" // Good, because of as prop, a tag
+  />
+)
+```
