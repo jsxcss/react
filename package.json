@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:core": "turbo run build --filter=@jsxcss/core --filter=@jsxcss/emotion",
     "changeset": "changeset",
     "changeset:version": "changeset version && pnpm i --lockfile-only",
     "commit": "cz",

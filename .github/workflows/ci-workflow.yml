@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        command: ['pnpm build --filter=@jsxcss/core --filter=@jsxcss/emotion', 'pnpm lint', 'pnpm test']
+        command: ['pnpm build:core', 'pnpm lint', 'pnpm test']
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
