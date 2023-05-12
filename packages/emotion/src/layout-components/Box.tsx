@@ -445,6 +445,7 @@ const createBox = (): BoxComponentType =>
       zoom,
       ...rest
     } = props
+
     const Component = as
 
     return (
@@ -894,6 +895,4 @@ const createBox = (): BoxComponentType =>
     )
   })
 
-type BoxType = BoxComponentType
-
-export const Box = createBox() as BoxType
+export const Box = createBox() as BoxComponentType
