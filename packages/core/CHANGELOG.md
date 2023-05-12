@@ -1,5 +1,11 @@
 # @jsxcss/core
 
+## 1.3.4
+
+### Patch Changes
+
+- 551a2ba: refactor: add function to inject css from outside
+
 ## 1.3.3
 
 ## 1.3.2

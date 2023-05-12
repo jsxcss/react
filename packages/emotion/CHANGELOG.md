@@ -1,5 +1,13 @@
 # @jsxcss/emotion
 
+## 1.3.4
+
+### Patch Changes
+
+- 551a2ba: refactor: add function to inject css from outside
+- Updated dependencies [551a2ba]
+  - @jsxcss/core@1.3.4
+
 ## 1.3.3
 
 ### Patch Changes
