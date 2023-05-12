@@ -1,5 +1,5 @@
 {
-  "name": "@jsxcss/test-emotion",
+  "name": "@jsxcss/emotion-test",
   "private": true,
   "scripts": {
     "build": "next build",
