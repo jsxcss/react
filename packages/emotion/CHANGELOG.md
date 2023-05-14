@@ -1,5 +1,12 @@
 # @jsxcss/emotion
 
+## 1.3.6
+
+### Patch Changes
+
+- 405ff32: fix(emotion): rename CenterVertical, CenterHorizontal to AlignCenter, JustifyCenter
+  - @jsxcss/core@1.3.6
+
 ## 1.3.5
 
 ### Patch Changes
