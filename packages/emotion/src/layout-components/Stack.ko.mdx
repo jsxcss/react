@@ -2,3 +2,33 @@
 sidebar_position: 3
 title: Stack
 ---
+
+### 쌓는 UI를 구현할 때 Box
+
+UI를 개발하면서 쌓이는 모양의 컴포넌트는 필수적입니다.
+그 때 Stack을 사용하면 쌓이는 모양의 UI를 쉽게 구현할 수 있습니다.
+
+또한 [Box](/docs/emotion/src/layout-components/Box.i18n)의 모든 기능은 Stack에도 있습니다.
+
+## Props
+
+```tsx
+export interface StackOption {
+  direction?: 'horizontal' | 'vertical'
+  justify?: FlexOption['justify']
+  align?: FlexOption['align']
+  spacing?: CSSProperties['gap']
+}
+
+export type StackProps<T extends ElementType = 'div'> = BoxProps<T> & OptionWithMediaQuery<StackOption>
+```
+
+### Stack.Vertical/Horizontal
+
+```tsx
+<Stack.Vertical spacing={8} />
+<Stack direction='vertical' spacing={8} />
+<Flex direction='column' gap={8} />
+<Box display='flex' flexDirection='column' gap={8} />
+<div css={{display: 'flex', flexDirection: 'column', gap: 8}} />
+```

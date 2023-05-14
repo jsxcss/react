@@ -2,3 +2,32 @@
 sidebar_position: 2
 title: Flex
 ---
+
+### display:flex가 기본인 Box
+
+UI를 개발하면서 flex는 기본적으로 다뤄야 합니다.
+이 컴포넌트는 flex를 쉽게 다룰 수 있도록 FlexProps를 제공합니다.
+
+또한 [Box](/docs/emotion/src/layout-components/Box.i18n)의 모든 기능은 Flex에도 있습니다.
+
+## Props
+
+```tsx
+interface FlexOption {
+  direction?: CSSProperties['flexDirection']
+  justify?: CSSProperties['justifyContent']
+  align?: CSSProperties['alignItems']
+}
+
+export type FlexProps<T extends ElementType = 'div'> = BoxProps<T> & OptionWithMediaQuery<FlexOption>
+```
+
+### Flex.Center
+
+```tsx
+// 아래는 모두 같은 UI를 보여줍니다.
+<Flex.Center />
+<Flex justify='center' align='center' />
+<Box display='flex' justifyContent='center' alignItems='center' />
+<div css={{display:'flex', justifyContent: 'center' alignItems: 'center'}} />
+```

@@ -2,3 +2,32 @@
 sidebar_position: 2
 title: Flex
 ---
+
+### Box with default display:flex
+
+As you develop your UI, you should basically deal with flex.
+This component provides FlexProps for easy handling of flex.
+
+And all the features of [Box](/docs/emotion/src/layout-components/Box.i18n) are also in Flex.
+
+## Props
+
+```tsx
+interface FlexOption {
+  direction?: CSSProperties['flexDirection']
+  justify?: CSSProperties['justifyContent']
+  align?: CSSProperties['alignItems']
+}
+
+export type FlexProps<T extends ElementType = 'div'> = BoxProps<T> & OptionWithMediaQuery<FlexOption>
+```
+
+### Flex.Center
+
+```tsx
+// Below all show the same UI.
+<Flex.Center />
+<Flex justify='center' align='center' />
+<Box display='flex' justifyContent='center' alignItems='center' />
+<div css={{display:'flex', justifyContent: 'center' alignItems: 'center'}} />
+```

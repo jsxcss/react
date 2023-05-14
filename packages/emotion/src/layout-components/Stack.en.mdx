@@ -2,3 +2,33 @@
 sidebar_position: 3
 title: Stack
 ---
+
+### Box when implementing stacking UI
+
+As you develop your UI, stacking shaped components is essential.
+At that time, using Stack makes it easy to implement a stacked UI.
+
+And all the features of [Box](/docs/emotion/src/layout-components/Box.i18n) are also in Stack.
+
+## Props
+
+```tsx
+export interface StackOption {
+  direction?: 'horizontal' | 'vertical'
+  justify?: FlexOption['justify']
+  align?: FlexOption['align']
+  spacing?: CSSProperties['gap']
+}
+
+export type StackProps<T extends ElementType = 'div'> = BoxProps<T> & OptionWithMediaQuery<StackOption>
+```
+
+### Stack.Vertical/Horizontal
+
+```tsx
+<Stack.Vertical spacing={8} />
+<Stack direction='vertical' spacing={8} />
+<Flex direction='column' gap={8} />
+<Box display='flex' flexDirection='column' gap={8} />
+<div css={{display: 'flex', flexDirection: 'column', gap: 8}} />
+```
