@@ -21,11 +21,11 @@ const createFlex = (defaultOption: FlexOption = {}): FlexComponentType =>
 
 type FlexType = FlexComponentType & {
   Center: FlexComponentType
-  CenterVertical: FlexComponentType
-  CenterHorizontal: FlexComponentType
+  AlignCenter: FlexComponentType
+  JustifyCenter: FlexComponentType
 }
 
 export const Flex = createFlex() as FlexType
 Flex.Center = createFlex({ align: 'center', justify: 'center' })
-Flex.CenterVertical = createFlex({ align: 'center' })
-Flex.CenterHorizontal = createFlex({ justify: 'center' })
+Flex.AlignCenter = createFlex({ align: 'center' })
+Flex.JustifyCenter = createFlex({ justify: 'center' })
