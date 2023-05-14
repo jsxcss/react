@@ -1,5 +1,12 @@
 # @jsxcss/emotion
 
+## 1.3.5
+
+### Patch Changes
+
+- 0d7ab6b: fix(emotion): mediaQuery arg type
+  - @jsxcss/core@1.3.5
+
 ## 1.3.4
 
 ### Patch Changes
