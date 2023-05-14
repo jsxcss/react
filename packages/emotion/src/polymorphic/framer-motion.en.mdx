@@ -2,3 +2,30 @@
 sidebar_position: 2
 title: framer-motion
 ---
+
+# Integrating with framer-motion
+
+### how to integrate
+
+First, install the library from the [framer-motion homepage](https://www.framer.com/motion).
+
+```tsx
+import { Box } from '@jsxcss/emotion'
+import { motion } from 'framer-motion'
+
+const FramerMotionPage = () => {
+  return (
+    <Box
+      as={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      backgroundColor={['red', 'yellow']}
+      margin={12}
+    >
+      FramerMotionPage
+    </Box>
+  )
+}
+
+export default FramerMotionPage
+```

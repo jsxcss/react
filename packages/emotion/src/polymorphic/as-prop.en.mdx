@@ -2,3 +2,43 @@
 sidebar_position: 1
 title: as prop
 ---
+
+JSXCSS provides an as prop to convert any component to another html tag.
+
+### accessibility
+
+However, you can always convert it to another ReactElement if you wish.
+
+```tsx
+// Accessible
+const Correct = () => <Box as="section" />
+```
+
+### type safety
+
+You can freely change the tag while also being guaranteed stability in terms of type.
+
+```tsx
+// Wrong
+const Wrong = () => (
+  <Box
+    as="div"
+    href="https://example.com" // type error occurred! because of as prop, div tag have no href prop
+  />
+)
+
+// Correct
+const Correct = () => (
+  <Box
+    as="a"
+    href="https://example.com" // Good, because of as prop, a tag
+  />
+)
+```
+
+### Integration with other libraries
+
+By integrating with other html tags as well as other animation libraries, more functions can be combined with JSXCSS components.
+
+1. [framer-motion](/docs/emotion/src/polymorphic/framer-motion.i18n)
+2. [react-spring](/docs/emotion/src/polymorphic/react-spring.i18n)

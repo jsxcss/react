@@ -2,3 +2,43 @@
 sidebar_position: 1
 title: as prop
 ---
+
+JSXCSS는 모든 컴포넌트를 다른 html tag로 변환할 수 있도록 as prop을 제공합니다.
+
+### 접근성
+
+하지만 원한다면 언제든지 다른 ReactElement로 변환할 수 있습니다.
+
+```tsx
+// Accessible
+const Correct = () => <Box as="section" />
+```
+
+### 타입 안정성
+
+자유롭게 태그를 변경하면서도 타입적으로도 안정성을 보장받을 수 있습니다.
+
+```tsx
+// Wrong
+const Wrong = () => (
+  <Box
+    as="div"
+    href="https://example.com" // type error occured! because of as prop, div tag have no href prop
+  />
+)
+
+// Correct
+const Correct = () => (
+  <Box
+    as="a"
+    href="https://example.com" // Good, because of as prop, a tag
+  />
+)
+```
+
+### 다른 라이브러리와의 통합
+
+다른 html tag뿐 아니라 다른 애니메이션 라이브러리와도 통합해 더 많은 기능을 JSXCSS의 컴포넌트와 결합해 사용할 수 있습니다.
+
+1. [framer-motion](/docs/emotion/src/polymorphic/framer-motion.i18n)
+2. [react-spring](/docs/emotion/src/polymorphic/react-spring.i18n)

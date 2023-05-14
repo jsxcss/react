@@ -2,3 +2,29 @@
 sidebar_position: 3
 title: react-spring
 ---
+
+# react-spring과 통합하기
+
+### 통합하는 방법
+
+먼저 [react-spring 홈페이지](https://www.react-spring.dev)에서 해당 라이브러리를 설치해주세요.
+
+```tsx
+import { Box } from '@jsxcss/emotion'
+import { animated, useSpring } from '@react-spring/web'
+
+const ReactSpringPage = () => {
+  const style = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+  })
+
+  return (
+    <Box as={animated.div} style={style} backgroundColor={['red', 'yellow']} margin={12}>
+      ReactSpringPage
+    </Box>
+  )
+}
+
+export default ReactSpringPage
+```
