@@ -10,4 +10,4 @@ export type {
   StackComponentType,
 } from './layout-components'
 export { createUtils } from './utils'
-export { creatMediaQuerySet } from './responsive'
+export type { CSSPropertiesWithMediaQuery } from './responsive'
