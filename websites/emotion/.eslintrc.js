@@ -1,13 +1,11 @@
-const config = require('@jsxcss/eslint/next.js')
-
 module.exports = {
-  ...config,
+  root: true,
+  extends: ['@jsxcss/eslint-config/next'],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
   },
   rules: {
-    ...config.rules,
-    '@typescript-eslint/no-use-before-define': ['off'],
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },
 }

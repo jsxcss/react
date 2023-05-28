@@ -15,7 +15,7 @@
     "builtin-modules": "^3.3.0"
   },
   "devDependencies": {
-    "@jsxcss/eslint": "workspace:*",
+    "@jsxcss/eslint-config": "workspace:*",
     "rollup": "^3.5.1"
   },
   "peerDependencies": {

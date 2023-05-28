@@ -1,5 +1,5 @@
 module.exports = {
-  ...require('@jsxcss/eslint/common.js'),
+  extends: ['@jsxcss/eslint-config/common']
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',

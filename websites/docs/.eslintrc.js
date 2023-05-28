@@ -1,16 +1,12 @@
-const config = require('@jsxcss/eslint/common.js')
-
 module.exports = {
-  ...config,
+  root: true,
+  extends: ['@jsxcss/eslint-config/react'],
   parserOptions: {
-    ...config.parserOptions,
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
   },
   rules: {
-    ...config.rules,
-    'import/no-unresolved': ['off'],
-    'react/jsx-props-no-spreading': ['off'],
-    'react/no-array-index-key': ['off'],
-  },
+    // @theme, @docusaurus, etc aren't actual paths. They are webpack aliases. To prevent ESLint from tripping up on those, you could ignore those in the ESLint settings
+    'import/no-unresolved': [2, { ignore: ['^@theme', '^@docusaurus', '^@site'] }],
+  }
 }

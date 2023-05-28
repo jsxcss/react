@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@jsxcss/eslint": "workspace:*",
+    "@jsxcss/eslint-config": "workspace:*",
     "@jsxcss/tsconfig": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",

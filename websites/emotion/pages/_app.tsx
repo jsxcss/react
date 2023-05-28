@@ -1,6 +1,6 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
 import { MediaQueryProvider } from '@jsxcss/emotion'
+import type { AppProps } from 'next/app'
 import { Navigation, WindowSizeSensor } from '../components'
 
 const mediaQueryPxs = [0, 768, 1440]

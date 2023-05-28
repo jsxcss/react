@@ -1,7 +1,7 @@
+import { ComponentPropsWithoutRef, forwardRef } from 'react'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Box, Flex, Stack } from '@jsxcss/emotion'
-import { ComponentPropsWithoutRef, forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import { Spinner } from '../../components'
 
@@ -82,25 +82,23 @@ const ButtonLoadingWrapper = styled.div`
   align-items: cetner;
 `
 
-const StyledButton = forwardRef<HTMLButtonElement, ButtonProps>(({ children, isLoading, ...rest }, ref) => {
-  return (
-    <ButtonContainer
-      ref={ref}
-      {...rest}
-      whileHover={{
-        scale: 0.98,
-        cursor: 'pointer',
-      }}
-    >
-      {isLoading && (
-        <ButtonLoadingWrapper>
-          <Spinner />
-        </ButtonLoadingWrapper>
-      )}
-      <ButtonTextWrapper>{children}</ButtonTextWrapper>
-    </ButtonContainer>
-  )
-})
+const StyledButton = forwardRef<HTMLButtonElement, ButtonProps>(({ children, isLoading, ...rest }, ref) => (
+  <ButtonContainer
+    ref={ref}
+    {...rest}
+    whileHover={{
+      scale: 0.98,
+      cursor: 'pointer',
+    }}
+  >
+    {isLoading && (
+      <ButtonLoadingWrapper>
+        <Spinner />
+      </ButtonLoadingWrapper>
+    )}
+    <ButtonTextWrapper>{children}</ButtonTextWrapper>
+  </ButtonContainer>
+))
 
 const CSSButton = forwardRef<HTMLButtonElement, ButtonProps>(({ children, isLoading, ...rest }, ref) => (
   <motion.button

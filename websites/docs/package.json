@@ -9,7 +9,7 @@
     "dev:ko": "pnpm gen:i18n && docusaurus start --locale ko",
     "docusaurus": "docusaurus",
     "gen:i18n": "pnpm clear && pnpm ts-node -T ./scripts/build-docs/index.ts && pnpm write-translations",
-    "lint": "eslint .",
+    "lint": "eslint \"**/*.ts*\"",
     "serve": "docusaurus serve",
     "swizzle": "docusaurus swizzle",
     "typecheck": "tsc",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.2.0",
     "@docusaurus/theme-classic": "^2.2.0",
-    "@jsxcss/eslint": "workspace:*",
+    "@jsxcss/eslint-config": "workspace:*",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",

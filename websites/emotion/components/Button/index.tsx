@@ -1,6 +1,6 @@
+import { ComponentPropsWithoutRef, PropsWithChildren, forwardRef } from 'react'
 import { Flex, Stack } from '@jsxcss/emotion'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ComponentPropsWithoutRef, forwardRef, PropsWithChildren } from 'react'
 import { Spinner } from '../Spinner'
 
 export const Button = forwardRef<

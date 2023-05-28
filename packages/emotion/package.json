@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist esm && tsc -p tsconfig.json --declaration --emitDeclarationOnly --declarationDir dist && rollup -c rollup.config.js",
-    "lint": "eslint .",
+    "lint": "eslint \"**/*.ts*\"",
     "npm:publish": "pnpm publish",
     "prepack": "pnpm build",
     "test": "echo \"Error: no test specified\"",
@@ -42,7 +42,7 @@
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/react": "^11.10.6",
     "@jsxcss/babel": "workspace:*",
-    "@jsxcss/eslint": "workspace:*",
+    "@jsxcss/eslint-config": "workspace:*",
     "@jsxcss/rollup": "workspace:*",
     "@jsxcss/tsconfig": "workspace:*",
     "@types/node": "^18.11.9",
