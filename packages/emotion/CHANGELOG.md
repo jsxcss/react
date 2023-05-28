@@ -1,5 +1,12 @@
 # @jsxcss/emotion
 
+## 1.3.7
+
+### Patch Changes
+
+- 43e8ea6: fix(emotion): add 'use client' directive
+  - @jsxcss/core@1.3.7
+
 ## 1.3.6
 
 ### Patch Changes
