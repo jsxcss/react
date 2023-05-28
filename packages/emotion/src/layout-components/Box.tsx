@@ -1,3 +1,5 @@
+'use client'
+
 import { ComponentPropsWithRef, ElementType, forwardRef, useContext } from 'react'
 import { BoxComponentType, BoxProps } from '@jsxcss/core'
 import { MediaQueryContext } from '../responsive'
