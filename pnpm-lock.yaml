@@ -126,9 +126,6 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
     devDependencies:
-      '@jsxcss/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
       rollup:
         specifier: ^3.5.1
         version: 3.13.0
