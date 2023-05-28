@@ -1,5 +1,12 @@
 # @jsxcss/emotion
 
+## 1.3.8
+
+### Patch Changes
+
+- 70af339: next.js 'use client' directive resolved
+  - @jsxcss/core@1.3.8
+
 ## 1.3.7
 
 ### Patch Changes
