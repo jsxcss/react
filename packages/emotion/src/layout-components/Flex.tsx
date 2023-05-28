@@ -1,3 +1,5 @@
+'use client'
+
 import { ComponentPropsWithRef, ElementType, forwardRef, useContext } from 'react'
 import { FlexComponentType, FlexOption, FlexProps } from '@jsxcss/core'
 import { Box } from './Box'

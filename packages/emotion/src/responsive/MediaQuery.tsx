@@ -1,3 +1,5 @@
+'use client'
+
 import { CSSProperties, PropsWithChildren, createContext, useContext, useMemo } from 'react'
 import { css } from '@emotion/react'
 import { CSSPropertiesWithMediaQuery } from '@jsxcss/core'
