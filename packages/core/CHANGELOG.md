@@ -1,5 +1,11 @@
 # @jsxcss/core
 
+## 1.3.9
+
+### Patch Changes
+
+- 7a34577: changeset publish initialization
+
 ## 1.3.8
 
 ## 1.3.7

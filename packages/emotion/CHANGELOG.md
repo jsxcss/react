@@ -1,5 +1,13 @@
 # @jsxcss/emotion
 
+## 1.3.9
+
+### Patch Changes
+
+- 7a34577: changeset publish initialization
+- Updated dependencies [7a34577]
+  - @jsxcss/core@1.3.9
+
 ## 1.3.8
 
 ### Patch Changes
