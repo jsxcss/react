@@ -1,5 +1,12 @@
 # @jsxcss/emotion-test
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [7a34577]
+  - @jsxcss/emotion@1.3.9
+
 ## 0.0.1
 
 ### Patch Changes
