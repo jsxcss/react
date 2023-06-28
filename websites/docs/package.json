@@ -5,8 +5,8 @@
     "build": "pnpm gen:i18n && docusaurus build",
     "clear": "docusaurus clear && rm -rf docs i18n/ko/docusaurus-plugin-content-docs/current",
     "deploy": "docusaurus deploy",
-    "dev": "pnpm gen:i18n && docusaurus start",
-    "dev:ko": "pnpm gen:i18n && docusaurus start --locale ko",
+    "dev": "pnpm gen:i18n && docusaurus start --port 3100",
+    "dev:ko": "pnpm gen:i18n && docusaurus start --port 3100 --locale ko",
     "docusaurus": "docusaurus",
     "gen:i18n": "pnpm clear && pnpm ts-node -T ./scripts/build-docs/index.ts && pnpm write-translations",
     "lint": "eslint \"**/*.ts*\"",
@@ -17,8 +17,8 @@
     "write-translations": "docusaurus write-translations --locale ko"
   },
   "dependencies": {
-    "@docusaurus/core": "2.2.0",
-    "@docusaurus/preset-classic": "2.2.0",
+    "@docusaurus/core": "2.4.1",
+    "@docusaurus/preset-classic": "2.4.1",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.2.1",
     "prism-react-renderer": "^1.3.5",
@@ -26,8 +26,9 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.2.0",
-    "@docusaurus/theme-classic": "^2.2.0",
+    "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/theme-classic": "^2.4.1",
+    "@docusaurus/types": "^2.4.1",
     "@jsxcss/eslint-config": "workspace:*",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/node": "^18.11.9",

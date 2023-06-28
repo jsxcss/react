@@ -139,6 +139,13 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: 'CLLTO12ZPK',
+        apiKey: '2f647aa845d2b067e9860616ad6206a0',
+        indexName: 'jsxcss',
+        branch: 'main',
+        contextualSearch: true,
+      },
     }),
 }
 
